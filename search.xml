@@ -5,9 +5,13 @@
     <url>/2022/11/14/my/</url>
     <content><![CDATA[<p>看完《强风吹拂》这部动漫，不禁想到了经典动漫《起风了》里面的台词：</p>
 <p><strong>“纵有疾风起，人生不言弃”</strong></p>
-<p>《强风吹拂》向我们传达的也是一种突破自我的坚持。箱根驿传一路崎岖坎坷，这何尝不是人生之路的真实写照呢？<br>其实我们的人生并不是在平坦的赛道上前行，从升学毕业到结婚成家，每一个人生转折点就如箱根驿传上的一个接力点，下一段也许会更加坚信，</p>
+<p>《强风吹拂》向我们传达的也是一种突破自我的坚持</p>
+<p>箱根驿传一路崎岖坎坷，这何尝不是人生之路的真实写照呢？</p>
+<p>其实我们的人生并不是在平坦的赛道上前行，从升学毕业到结婚成家</p>
+<p>每一个人生转折点就如箱根驿传上的一个接力点，下一段也许会更加坚信</p>
 <span id="more"></span>
-<p>但这一路有幸与亲人朋友们相互支持、相互鼓舞，我们便可强大到去战胜面前的困难，亦可战胜自己内心的胆怯，在人生的道路上迎难而上，步履不停地去追求心中的目标！</p>
+<p>但这一路有幸与亲人朋友们相互支持、相互鼓舞，我们便可强大到去战胜面前的困难，亦可战胜自己内心的胆怯</p>
+<p>在人生的道路上迎难而上，步履不停地去追求心中的目标！</p>
 ]]></content>
   </entry>
   <entry>
@@ -55,23 +59,5 @@
       <tags>
         <tag>随便写的</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/2022/11/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
