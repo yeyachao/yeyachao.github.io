@@ -18,17 +18,7 @@
     <title></title>
     <url>/2022/12/06/%E6%9C%80%E8%BF%91%E5%BE%88%E7%81%AB%E7%9A%84%E5%9C%A3%E8%AF%9E%E6%A0%91/</url>
     <content><![CDATA[<p>title: 最近很火的圣诞树<br>date: 2022-12-6<br>categories: JavaScript<br>tags: 随便写的<br>mathjax: true</p>
-<h2 id="不墨迹-直接上源码"><a href="#不墨迹-直接上源码" class="headerlink" title="不墨迹 直接上源码"></a>不墨迹 直接上源码</h2><!DOCTYPE html>
-<html lang="en" >
-
-<head>
- <meta charset="UTF-8">
-
- <title>Musical Christmas Lights</title>
-
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
- <style>
+<h2 id="不墨迹-直接上源码"><a href="#不墨迹-直接上源码" class="headerlink" title="不墨迹 直接上源码"></a>不墨迹 直接上源码</h2> <style>
   * {
    box-sizing: border-box;
   }
@@ -613,9 +603,7 @@
      }
 </script>
 
-</body>
 
-</html>
 ]]></content>
   </entry>
   <entry>
