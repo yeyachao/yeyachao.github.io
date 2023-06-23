@@ -121,7 +121,8 @@
     <title>回流与重绘</title>
     <url>/2022/11/15/ReflowandRepaint/</url>
     <content><![CDATA[<hr>
-<h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2><ol>
+<p><strong>在回流和重绘之前先来了解一下的浏览器的渲染过程</strong></p>
+<ol>
 <li>浏览器请求到静态资源后，开始加载并解析。</li>
 <li>解析HTML文档，构建DOM树。DOM树里包含了所有的HTML标签，包括display:none;隐藏，还有用JS动态添加的元素等。</li>
 <li>解析CSS属性，构建cssDom树。</li>
