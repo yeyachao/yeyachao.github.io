@@ -358,7 +358,7 @@
 <li><p>变量提升：先声明变量，再进行赋值</p>
 </li>
 </ul>
-<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><h2 id="展开运算符（…）"><a href="#展开运算符（…）" class="headerlink" title="展开运算符（…）"></a>展开运算符（…）</h2><h2 id="Set和Map"><a href="#Set和Map" class="headerlink" title="Set和Map"></a>Set和Map</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="async和await"><a href="#async和await" class="headerlink" title="async和await"></a>async和await</h2>]]></content>
+<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><h2 id="Object-assign-有什么作用"><a href="#Object-assign-有什么作用" class="headerlink" title="Object.assign()有什么作用"></a>Object.assign()有什么作用</h2><h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><h2 id="展开运算符（…）"><a href="#展开运算符（…）" class="headerlink" title="展开运算符（…）"></a>展开运算符（…）</h2><h2 id="Set和Map"><a href="#Set和Map" class="headerlink" title="Set和Map"></a>Set和Map</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="async和await"><a href="#async和await" class="headerlink" title="async和await"></a>async和await</h2>]]></content>
       <categories>
         <category>javascript</category>
       </categories>
