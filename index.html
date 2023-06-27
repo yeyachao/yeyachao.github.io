@@ -808,10 +808,14 @@
                         <hr>
 <p><strong>在回流和重绘之前先来了解一下的浏览器的渲染过程</strong></p>
 <ol>
-<li>浏览器请求到静态资源后，开始加载并解析。</li>
-<li>解析HTML文档，构建DOM树。DOM树里包含了所有的HTML标签，包括display:none;隐藏，还有用JS动态添加的元素等。</li>
-<li>解析CSS属性，构建cssDom树。</li>
-<li>将DOM树和cssDom树合并后，生成render树。render树不包含隐藏的节点(比如display:none;的节点，还有head节点)，因为这些节点不会用于呈现，也不会影响呈现。
+<li><strong>解析HTML文件</strong>，构建DOM树（Document Object Model），表示页面的结构和内容。</li>
+<li><strong>解析CSS文件</strong>，构建CSSOM树（CSS Object Model），表示页面的样式和布局。</li>
+<li><strong>合并DOM树和CSSOM树</strong>，生成渲染树（Render Tree），表示页面的可见元素和属性。</li>
+<li><strong>布局渲染树</strong>，计算每个元素的位置和大小，生成布局（Layout）。</li>
+<li><strong>绘制渲染树</strong>，将每个元素绘制到屏幕上，生成像素（Paint）。</li>
+<li><strong>合成图层</strong>，将多个图层合并为一张位图，显示在屏幕上（Composite）。</li>
+</ol>
+<p>在这个过程中，还可能涉及到<strong>加载图片等资源文件</strong>和<strong>执行解析js文件脚本代码</strong>等操作，这些操作可能会影响DOM树、CSSOM树或渲染树的更新，从而触发重排（Reflow）或重绘（Repaint）。</p>
                     
                 </div>
 
