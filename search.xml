@@ -18,7 +18,7 @@
     <title>面试题总结</title>
     <url>/2023/06/26/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p>JavaScript，ES6，Vue，NodeJs，React知识点总结</p>
-<h2 id="js的数据类型及其存储方式"><a href="#js的数据类型及其存储方式" class="headerlink" title="js的数据类型及其存储方式"></a>js的数据类型及其存储方式</h2><ul>
+<h1 id="JavaScript-amp-amp-ES6"><a href="#JavaScript-amp-amp-ES6" class="headerlink" title="JavaScript&amp;&amp;ES6"></a>JavaScript&amp;&amp;ES6</h1><h2 id="js的数据类型及其存储方式"><a href="#js的数据类型及其存储方式" class="headerlink" title="js的数据类型及其存储方式"></a>js的数据类型及其存储方式</h2><ul>
 <li><p><strong>基本数据类型</strong>：Number，String，Boolean，Null，Undefined，Symbol</p>
 </li>
 <li><p><strong>引用数据类型</strong>：Object，Array，Function，Date等等…</p>
@@ -200,9 +200,7 @@
 <li>块级作用域：简单来说用let和const在任意的代码块中定义的变量都认为是块级作用域中的变量，例如在for循环中用let定义的变量，在if语句中用let定义的变量等等</li>
 </ul>
 <p>注: 1. 尽量不要使用全局变量，因为容易导致全局的污染，命名冲突，对bug查找不利。</p>
-<ol start="2">
-<li>而所谓的作用域链就是由最内部的作用域往最外部,查找变量的过程.形成的链条就是作用域链</li>
-</ol>
+<p>​      2. 而所谓的作用域链就是由最内部的作用域往最外部,查找变量的过程.形成的链条就是作用域链</p>
 </li>
 </ul>
 <h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><ul>
@@ -339,11 +337,13 @@
 <li>json返回的是一串json格式数据；而jsonp返回的是脚本代码（包含一个函数调用）</li>
 <li>jsonp的全名叫做json with padding，就是把json对象用符合js语法的形式包裹起来以使其他的网站可以请求到，也就是将json封装成js文件传过去。</li>
 </ul>
-<h2 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h2><h2 id="cookie，sessionStoreage和localStorage"><a href="#cookie，sessionStoreage和localStorage" class="headerlink" title="cookie，sessionStoreage和localStorage"></a>cookie，sessionStoreage和localStorage</h2><ul>
-<li><p>都用在客户端存储数据，每一个都有自己的存储和到期限制，</p>
-</li>
-<li><p>不同点：</p>
-<ul>
+<h2 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h2><ul>
+<li>1、构造函数中使用代表的是当前实例化对象 谁new了我 我就指向谁</li>
+<li>2、全局环境中 this指向window 如果我们在全局中调用了函数 那么函数中的this就是指向window 谁调用我 我就指向谁</li>
+</ul>
+<h2 id="cookie，sessionStoreage和localStorage"><a href="#cookie，sessionStoreage和localStorage" class="headerlink" title="cookie，sessionStoreage和localStorage"></a>cookie，sessionStoreage和localStorage</h2><ul>
+<li>都用在客户端存储数据，每一个都有自己的存储和到期限制，</li>
+<li>不同点：<ul>
 <li><ul>
 <li>存储大小：<ul>
 <li>cookie数据大小不能大于4k</li>
@@ -354,15 +354,13 @@
 </li>
 </ul>
 </li>
-<li><p>有效时间</p>
-<ul>
+<li>有效时间<ul>
 <li>cookie在设置的有效期内一直有效</li>
 <li>localStorage存储持久数据，只要不手动清除则一直存在</li>
 <li>sessionStorage数据在当前浏览器关闭后就会被自动清除</li>
 </ul>
 </li>
-<li><p>数据与服务器间的交互方式</p>
-<ul>
+<li>数据与服务器间的交互方式<ul>
 <li>cookie的数据会自动传递到服务器端，服务器端的也可以写cookie到客户端</li>
 <li>localStorage和sessionStorage不会把数据自动传到服务器端，仅在本地存储</li>
 </ul>
@@ -370,7 +368,33 @@
 </ul>
 <h2 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h2><p>防抖：所有的触发都会被取消，最后一次执行在规定的时间后才会触发，也就是说，连续快速的触发多次，只有最后一次执行</p>
 <p>节流：在规定的时候内不会重新触发回调，只有大于时间间隔才会触发回调，减少事件触发的频率</p>
-<h2 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h2><h2 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h2><h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><ul>
+<h2 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h2><ul>
+<li><p>当事件发生在DOM元素上时，该事件并不完全发生在那个元素上。在“当事件发生在DOM元素上时，该事件并不完全发生在那个元素上。</p>
+</li>
+<li><p>事件传播有三个阶段：</p>
+<ul>
+<li>1、捕获阶段–事件从 window 开始，然后向下到每个元素，直到到达目标元素事件或event.target。</li>
+<li>2、目标阶段–事件已达到目标元素。</li>
+<li>3、冒泡阶段–事件从目标元素冒泡，然后上升到每个元素，直到到达 window。</li>
+</ul>
+</li>
+</ul>
+<h2 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h2><ul>
+<li>当事件发生在 DOM 元素上时，该事件并不完全发生在那个元素上。在捕获阶段，事件从 window 开始，一直到触发事件的元素。<code>window----&gt; document----&gt; html----&gt; body \----&gt;目标元素</code></li>
+</ul>
+<h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><ul>
+<li>事件冒泡刚好与事件捕获相反，当前元素—-&gt;body -—&gt; html—-&gt;document -—&gt;window。当事件发生在 DOM 元素上时，该事件并不完全发生在那个元素上。在冒泡阶段，事件冒泡，或者事件发生在它的父代，祖父母，祖父母的父代，直到到达 window 为止。</li>
+</ul>
+<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><ul>
+<li>事件委托是利用事件冒泡机制，在父元素上监听子元素的事件。通过将事件处理函数绑定到父元素上，可以实现对动态添加的子元素也能够触发相同的事件处理逻辑。当事件冒泡到父元素时，可以通过判断事件的目标元素（<code>event.target</code>）来确定具体是哪个子元素触发了事件。</li>
+<li>优点：<ul>
+<li>节省内存，避免了每个子元素都能绑定事件处理函数</li>
+<li>动态添加的子元素也能够绑定事件，无需重新绑定事件处理函数</li>
+</ul>
+</li>
+<li>综上所述，事件传播是指在DOM结构中的传递过程，包括事件捕获阶段、目标阶段和事件冒泡阶段，事件委托是一种利用事件冒泡机制，在父元素上监听子元素事件的技术</li>
+</ul>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><ul>
 <li>递归调用：函数在其自身内部调用自身。<ul>
 <li>在递归过程中，函数会反复调用自身，每次调用时都会解决一个规模较小的子问题，直到达到某个终止条件，然后逐层返回结果，最终得到整个问题的解。</li>
 </ul>
