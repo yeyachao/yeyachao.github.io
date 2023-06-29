@@ -1,119 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ES6(未总结完)</title>
-    <url>/2023/06/02/ES6/</url>
-    <content><![CDATA[<p><strong>ES6声明变量的六种方法</strong></p>
-<p>var，function，let，const，import，class</p>
-<p><strong>let,var,const 区别</strong></p>
-<p>var：预解析 变量提升 只提升变量名 不提升赋值，产生作用域</p>
-<p>let 定义的变量不进行预解析，不进行变量提升，产生块级作用域{}</p>
-<p>const 声明一个只读常量。一旦声明，常量的值就不能改变。(栈中的值)</p>
-<p><strong>箭头函数</strong></p>
-<p>​    1. 省略function关键字，在()和{}之间使用一个箭头连接</p>
-<p>​    2. 当形参有且只有一个的时候，()也可以省略不写</p>
-<span id="more"></span>
-
-<p>​    3. 当函数体中有且只有一条return语句时，可以省略{}及return关键字</p>
-<p>​    4. 没有自己的this指向,会查找父级作用域的this</p>
-<p>​    5. 没有arguments实参的集合</p>
-<ol start="6">
-<li><p>因为没有自己的this，所以不能作为构造函数使用</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// arguments</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn8</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">arguments</span>) <span class="comment">// Arguments(8) [1, 2, 3, 4, 5, 6, 7, 8, callee: ƒ, Symbol(Symbol.iterator): ƒ]</span></span><br><span class="line">   <span class="keyword">var</span> sum = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span>  i = <span class="number">0</span> ; i &lt; <span class="variable language_">arguments</span>.<span class="property">length</span> ; i++)&#123;</span><br><span class="line">​    sum += <span class="variable language_">arguments</span>[i]</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> sum</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">fn8</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>)) <span class="comment">// 结果是36</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 箭头函数没有arguments实参的集合</span></span><br><span class="line">  <span class="keyword">var</span> <span class="title function_">fn9</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">arguments</span>) <span class="comment">// arguments is not defined</span></span><br><span class="line">   <span class="keyword">var</span> sum = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span>  i = <span class="number">0</span> ; i &lt; <span class="variable language_">arguments</span>.<span class="property">length</span> ; i++)&#123;</span><br><span class="line">​    sum += <span class="variable language_">arguments</span>[i]</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> sum</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">fn9</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>))</span><br></pre></td></tr></table></figure></div></li>
-</ol>
-<p><strong>剩余运算符（扩展运算符）…</strong></p>
-<p>…(剩余运算符)的作用</p>
-<p>分配不了的都给它</p>
-<p>当剩余运算符在函数的形参中使用时，只允许出现在最后一个形参前面，表示剩下所有传递的实参都保存在这个参数中，以数组形式展示</p>
-<p>剩余运算符还可以作为展开数组的作用来使用，这时我们一般称之为开展运算符，或者扩展运算符，可以利用这种语法实现</p>
-<p>例如：数组合并 ，伪数组转换为真数组 等使用场景</p>
-<p>当我们需要将一个数组的每一个项作为实参的每一个值传递时，最简单的方式就是使用扩展运算符</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">var</span> arr3 = arr1.<span class="title function_">concat</span>(arr2) <span class="comment">// 合并数组</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr3) <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"><span class="comment">// 使用扩展运算符合并</span></span><br><span class="line"><span class="keyword">var</span> arr4 = [...arr1,...arr2]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr4) <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用扩展运算符找数组中最大值</span></span><br><span class="line"><span class="keyword">var</span> arr7 = [<span class="number">13</span>,<span class="number">21</span>,<span class="number">3</span>,<span class="number">3124</span>,<span class="number">32</span>,<span class="number">4532</span>,<span class="number">5</span>] </span><br><span class="line"><span class="keyword">let</span> maxNum = <span class="title class_">Math</span>.<span class="title function_">max</span>(...arr7)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(maxNum) <span class="comment">// 4532</span></span><br></pre></td></tr></table></figure></div>
-
-<p><strong>模板字符串</strong></p>
-<p>   使用反引号创建的字符串就是模板字符串 ``</p>
-<p>​    * 模板字符串中的内容允许直接换行</p>
-<p>​    * 解决了字符串和变量之间使用+拼接的繁琐工作，可以直接使用${}来识别变量</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;hello  word&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> str1 = <span class="string">`hello </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  word`</span></span><br></pre></td></tr></table></figure></div>
-
-<p><strong>结构赋值</strong></p>
-<p>在ES6中允许按照一定的模式从数组或者对象中提取想要的数据</p>
-<p>左右两边的结构必须保持一致</p>
-<p>声明和赋值不能分开</p>
-<p>将繁琐的数据进行简单化处理</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 数组的结构赋值</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;李四&quot;</span>, <span class="string">&quot;王五&quot;</span>]</span><br><span class="line"><span class="keyword">var</span> [a, b, ...c] = arr</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">// 张三</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b) <span class="comment">// 李四</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c) <span class="comment">// Array(1) </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象的结构赋值</span></span><br><span class="line"><span class="comment">// 对象的属性名和解构的变量名一一对应</span></span><br><span class="line">  <span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="string">&quot;19&quot;</span>,</span><br><span class="line">    <span class="attr">job</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;web前端&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> &#123; name, job,age &#125; = obj</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(name) <span class="comment">// 张三</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(age)  <span class="comment">// 19</span></span><br><span class="line">  <span class="title function_">job</span>() <span class="comment">// web前端</span></span><br></pre></td></tr></table></figure></div>
-
-
-
-<p><strong>Symbol数据类型</strong></p>
-<p>​    ES6引入一个全新的数据类型 Symbol该类型表示独一无二的值，类型的展现方式类似于字符串</p>
-<p>​     特点：</p>
-<p>​      1） Symbol值是唯一的，那么可以解决命名冲突问题</p>
-<p>​      2） Symbol值不能和其他任何数据进行计算</p>
-<p>​      3） Symbol定义的对象属性不能使用for in进行遍历 =，Reflect.ownkeys来获取所有的键名</p>
-<p>​    Symbol()表示创建一个独一无二的值</p>
-<p>​    Symbol.for()表示创建一个独一无二的地址</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">	</span><br><span class="line"><span class="comment">// Symbol()表示创建一个独一无二的值</span></span><br><span class="line"><span class="comment">// Symbol.for()表示创建一个独一无二的地址</span></span><br><span class="line"><span class="keyword">var</span> s1 = <span class="title class_">Symbol</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s1) <span class="comment">// Symbol()</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> s1) <span class="comment">//验证是symbol类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>  s2 = <span class="title class_">Symbol</span>(<span class="string">&quot;北工商&quot;</span>) </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s2) <span class="comment">// Symbol(北工商)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s3 = <span class="title class_">Symbol</span>(<span class="string">&quot;北工商&quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s2==s3) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s4 = <span class="title class_">Symbol</span>.<span class="title function_">for</span>(<span class="string">&quot;北工商&quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s4) <span class="comment">//Symbol(北工商)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> s4) <span class="comment">//symbol</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s2==s4) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s5 = <span class="title class_">Symbol</span>.<span class="title function_">for</span>(<span class="string">&quot;北工商&quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s5==s4) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s4.<span class="property">name</span>) <span class="comment">// undefined</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s5.<span class="property">name</span>) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure></div>
-
-<p><strong>迭代器（iterator）</strong></p>
-<p>​    迭代器就是一个接口，为各种不同的数据结构提供一种统一的访问机制，任何数据结构只要部署了iterator结构，那么就可以完成访问操作</p>
-<p>​    在ES6创造了一种全新的遍历命令，for of，只要有iterator结构数据结构就可以使用for of进行遍历操作</p>
-<ul>
-<li>Array</li>
-<li>Map</li>
-<li>Set</li>
-<li>String</li>
-<li>TypedArray</li>
-<li>函数的 arguments 对象</li>
-<li>NodeList 对象</li>
-</ul>
-<p>​    默认情况下 for of 是无法遍历对象的，因为对象的原型上没有部署iterator接口</p>
-<p>   * 工作原理</p>
-<p>​    1. 创建一个指针对象，指向当前数据的起始位置</p>
-<p>​    2. 第一次调用对象的next()方法，指针会自动指向该数据的下一个成员</p>
-<p>​    3. 接下来就是不断地调用next()方法，指针一直向后移动，一直到移动到最后一个成员</p>
-<p>​    4. 每一次调用next()方法时，会返回一个包含value和done两个属性的对象，其中value表示指针指向的数据，done表示是否完成</p>
-<p>​    5. 当执行到value的值为undefined时候，done的值就会变成true，当done值为true时，next()调用就会终止</p>
-<p>   * 使用场景</p>
-<p>​     当我们需要在自定义遍历数据的时候，我们想到的就是迭代器</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">String</span>.<span class="property"><span class="keyword">prototype</span></span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>)</span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span>  str = <span class="string">&quot;hello world&quot;</span></span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">of</span> str)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(item)</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// for(var item of obj)&#123;</span></span><br><span class="line"> <span class="comment">//  console.log(item)</span></span><br><span class="line"> <span class="comment">// &#125;</span></span><br><span class="line"> <span class="comment">//  obj is not iterable  Object没有iterable方法</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> arr = [<span class="string">&quot;独行月球&quot;</span>,<span class="string">&quot;疯狂外星人&quot;</span>,<span class="string">&quot;疯狂的石头&quot;</span>,<span class="string">&quot;疯狂原始人&quot;</span>]</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">of</span> arr)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(item)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">var</span> it = arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()</span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it) <span class="comment">// Array Iterator &#123;&#125;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it.<span class="title function_">next</span>()) <span class="comment">//&#123;value: &#x27;独行月球&#x27;, done: false&#125;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it.<span class="title function_">next</span>()) <span class="comment">//&#123;value: &#x27;疯狂外星人&#x27;, done: false&#125;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it.<span class="title function_">next</span>()) <span class="comment">//&#123;value: &#x27;疯狂的石头&#x27;, done: false&#125;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it.<span class="title function_">next</span>()) <span class="comment">//&#123;value: &#x27;疯狂原始人&#x27;, done: false&#125;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it.<span class="title function_">next</span>()) <span class="comment">//&#123;value: undefined, done: true&#125;</span></span><br></pre></td></tr></table></figure></div>
-
-<p><strong>Promise</strong></p>
-<p> Promise是ES6引入的异步编程的新解决方案，语法上Promise类似于一个构造函数，用来封装异步操作并可以获取成功或者失败的结果，专门用来解决回调地狱问题</p>
-<p> 在Promise的参数中传递的是一个回调函数，用来监听异步的结果，在这个回调函数中有两个参数，分别是resolve，reject </p>
-<p> resolve和reject 两个参数都是一个函数，分别表示成功和失败的回调参数</p>
-<p> 这两个参数调用时都会返回到Promise调用处一个Promise实例，该实例上有两个方法，分别是then 和 catch</p>
-<p>  then方法对应的是resolve返回的实例</p>
-<p>  catch方法对应的是reject返回的实例</p>
-<p>  then方法中可以接收两个参数，第一个参数是成功的回调，第二个参数则是失败的回调，</p>
-<p>  也就是说如果我们不想写catch 那么可以将catch的内容写在then方法的第二个参数中</p>
-<p>  <strong>Promise.all()</strong></p>
-<p>   作用：并行操作异步处理，当我们需要同时发起多个异步请求时而且需要对请求的结果做处理，这时我们就要考虑使用all方法</p>
-<p>  <strong>Promise有三个状态</strong></p>
-<p>   初始态：pending</p>
-<p>   在Promise中没有执行resolve 或者 reject的状态</p>
-<p>   成功态：fulfilled</p>
-<p>   失败态：rejected</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">1</span></span><br><span class="line">  <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> (<span class="params">resolve,reject</span>)&#123;</span><br><span class="line">   <span class="comment">// if(num &lt; 2)&#123;</span></span><br><span class="line">   <span class="comment">//  resolve(&#x27;成功&#x27;)</span></span><br><span class="line">   <span class="comment">// &#125;else&#123;</span></span><br><span class="line">   <span class="comment">//  reject(&#x27;失败&#x27;)</span></span><br><span class="line">   <span class="comment">// &#125;</span></span><br><span class="line">      </span><br><span class="line">   <span class="comment">// 写一些异步操作</span></span><br><span class="line">​    <span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">​     <span class="keyword">var</span> data = <span class="string">&quot;请求到的数据&quot;</span></span><br><span class="line">​     <span class="title function_">resolve</span>(data)</span><br><span class="line">​     <span class="title function_">reject</span>(<span class="string">&quot;err&quot;</span>)</span><br><span class="line">​    &#125;,<span class="number">2000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  p.<span class="title function_">catch</span>(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(err)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  p.<span class="title function_">then</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(p)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>)</span><br></pre></td></tr></table></figure></div>
-
-<p><strong>集合：Map Set</strong> </p>
-<p>   ES6提供了新的数据结构Set，类似于数组，但是具有成员唯一性的特性</p>
-<p>   访问Set集合中的数据可以使用 for of 遍历来访问</p>
-<p>**Set主要的应用场景在于 数据重组  **</p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// size返回集合元素的个数</span></span><br><span class="line"><span class="comment">// add() ：为当前集合新增一个新的成员,返回当前集合</span></span><br><span class="line"><span class="comment">// delete() : 为当前集合删除一个指定成员,返回boolean值</span></span><br><span class="line"><span class="comment">// clear() : 清空集合,返回undefined</span></span><br><span class="line"><span class="comment">// hsa() : 检测集合中是否存在某个成员，返回Boolean类型的</span></span><br><span class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="string">&quot;111&quot;</span>,<span class="string">&quot;222&quot;</span>,<span class="string">&quot;333&quot;</span>,<span class="string">&quot;111&quot;</span>])</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s1) <span class="comment">// Set(3) &#123;&#x27;111&#x27;, &#x27;222&#x27;, &#x27;333&#x27;&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s1.<span class="property">size</span>) <span class="comment">// 3</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">of</span> s1)&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(item) <span class="comment">// 111 222 333 </span></span><br><span class="line">  &#125;</span><br><span class="line">  s1.<span class="title function_">add</span>(<span class="string">&quot;444&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s1) <span class="comment">// Set(4) &#123;&#x27;111&#x27;, &#x27;222&#x27;, &#x27;333&#x27;, &#x27;444&#x27;&#125;</span></span><br><span class="line">  s1.<span class="title function_">delete</span>(<span class="string">&quot;222&quot;</span>) <span class="comment">// Set(3) &#123;&#x27;111&#x27;, &#x27;333&#x27;, &#x27;444&#x27;&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s1)</span><br><span class="line">  s1.<span class="title function_">clear</span>() </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s1) <span class="comment">// Set(0) &#123;size: 0&#125;</span></span><br><span class="line">  <span class="keyword">var</span> boo = s1.<span class="title function_">has</span>(<span class="string">&quot;444&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(boo) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// Set的值是唯一的 不可以重复且自动排序</span></span><br><span class="line">  <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">65</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">8</span>]</span><br><span class="line">  <span class="keyword">var</span> s2 = <span class="keyword">new</span> <span class="title class_">Set</span>(arr)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s2) <span class="comment">// Set(6) &#123;1, 2, 4, 65, 7, …&#125;</span></span><br><span class="line">  <span class="keyword">var</span> arr2 = [...s2]</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(arr2) <span class="comment">// (6) [1, 2, 4, 65, 7, 8]</span></span><br></pre></td></tr></table></figure></div>
-
-<p> <strong>Map 主要的应用场景在于数据储存</strong></p>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Map: </span></span><br><span class="line"><span class="comment">// ES6提出的心的数据结构，类似于对象，也是键值对的集合</span></span><br><span class="line"><span class="comment">// set() ：为集合添加新的成员，返回添加后的集合</span></span><br><span class="line"><span class="comment">// get() : 获取对应键名的值</span></span><br><span class="line"><span class="comment">// has() : 判断集合中是否存在某个成员 返回 boolean 值</span></span><br><span class="line"><span class="comment">// size() ：返回 Map 的元素个数</span></span><br><span class="line"><span class="comment">// clear() : 清空集合，返回 undefined</span></span><br><span class="line"><span class="comment">// delete(): 通过键值从Map中移除对应的数据</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> m1 = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">  m1.<span class="title function_">set</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&quot;张三&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(m1) </span><br><span class="line">  <span class="comment">// Map(1) &#123;&#x27;name&#x27; =&gt; &#x27;张三&#x27;&#125;</span></span><br><span class="line">  <span class="comment">// key: &quot;name&quot;</span></span><br><span class="line">  <span class="comment">// value: &quot;张三&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> m1 = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">    m1.<span class="title function_">set</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&quot;张三&quot;</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(m1)</span><br><span class="line">		<span class="comment">// Map(1) &#123;&#x27;name&#x27; =&gt; &#x27;张三&#x27;&#125;</span></span><br><span class="line">  		<span class="comment">// key: &quot;name&quot;</span></span><br><span class="line">  		<span class="comment">// value: &quot;张三&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> key = &#123;</span><br><span class="line">      <span class="attr">school</span>:<span class="string">&quot;北工商&quot;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    m1.<span class="title function_">set</span>(key,[<span class="string">&#x27;北京&#x27;</span>,<span class="string">&quot;上海&quot;</span>])</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(m1)</span><br><span class="line">	<span class="comment">//对象相同的键连续赋值，后一次的值会覆盖前一次的值</span></span><br><span class="line">	<span class="comment">//注意:只有对同一个对象的引用，Map结构才将其视为同一个键，引用数据类型必须内存地址一样，才可能是同一个键</span></span><br><span class="line">		<span class="comment">// 0: &#123;&quot;name&quot; =&gt; &quot;张三&quot;&#125;</span></span><br><span class="line">		<span class="comment">// key: &quot;name&quot;</span></span><br><span class="line">  		<span class="comment">// value: &quot;张三&quot;</span></span><br><span class="line">        <span class="comment">// 1: &#123;Object =&gt; Array(2)&#125;</span></span><br><span class="line">		<span class="comment">// key: &#123;school: &#x27;北工商&#x27;&#125;</span></span><br><span class="line">  		<span class="comment">// value: (2) [&#x27;北京&#x27;, &#x27;上海&#x27;]</span></span><br><span class="line"></span><br><span class="line">    m1.<span class="title function_">set</span>([<span class="string">&quot;name1&quot;</span>,<span class="string">&quot;李四&quot;</span>])</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(m1)</span><br><span class="line">	<span class="comment">// 如果读取一个未知的键，则返回undefined</span></span><br><span class="line">		<span class="comment">// 0: &#123;&quot;name&quot; =&gt; &quot;张三&quot;&#125;</span></span><br><span class="line">		<span class="comment">// key: &quot;name&quot;</span></span><br><span class="line">  		<span class="comment">// value: &quot;张三&quot;</span></span><br><span class="line">        <span class="comment">// 1: &#123;Object =&gt; Array(2)&#125;</span></span><br><span class="line">		<span class="comment">// key: &#123;school: &#x27;北工商&#x27;&#125;</span></span><br><span class="line">  		<span class="comment">// value: (2) [&#x27;北京&#x27;, &#x27;上海&#x27;]</span></span><br><span class="line">		<span class="comment">// 2: &#123;Array(2) =&gt; undefined&#125;</span></span><br><span class="line">		<span class="comment">// key: (2) [&#x27;name1&#x27;, &#x27;李四&#x27;]</span></span><br><span class="line">		<span class="comment">// value: undefined</span></span><br></pre></td></tr></table></figure></div>
-
-]]></content>
-      <categories>
-        <category>ES6</category>
-      </categories>
-      <tags>
-        <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World（摘抄意林）</title>
     <url>/2023/06/01/my/</url>
     <content><![CDATA[<p>看完《强风吹拂》这部动漫，不禁想到了经典动漫《起风了》里面的台词：</p>
@@ -126,58 +13,6 @@
 <p>但这一路有幸与亲人朋友们相互支持、相互鼓舞，我们便可强大到去战胜面前的困难，亦可战胜自己内心的胆怯</p>
 <p>在人生的道路上迎难而上，步履不停地去追求心中的目标!</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>回流与重绘</title>
-    <url>/2022/11/15/ReflowandRepaint/</url>
-    <content><![CDATA[<hr>
-<p><strong>在回流和重绘之前先来了解一下的浏览器的渲染过程</strong></p>
-<ol>
-<li><strong>解析HTML文件</strong>，构建DOM树（Document Object Model），表示页面的结构和内容。</li>
-<li><strong>解析CSS文件</strong>，构建CSSOM树（CSS Object Model），表示页面的样式和布局。</li>
-<li><strong>合并DOM树和CSSOM树</strong>，生成渲染树（Render Tree），表示页面的可见元素和属性。</li>
-<li><strong>布局渲染树</strong>，计算每个元素的位置和大小，生成布局（Layout）。</li>
-<li><strong>绘制渲染树</strong>，将每个元素绘制到屏幕上，生成像素（Paint）。</li>
-<li><strong>合成图层</strong>，将多个图层合并为一张位图，显示在屏幕上（Composite）。</li>
-</ol>
-<p>在这个过程中，还可能涉及到<strong>加载图片等资源文件</strong>和<strong>执行解析js文件脚本代码</strong>等操作，这些操作可能会影响DOM树、CSSOM树或渲染树的更新，从而触发重排（Reflow）或重绘（Repaint）。</p>
-<span id="more"></span>
-
-<p>Reflow（回流)：在render树的基础上进行布局, 计算每个节点的大小和位置。</p>
-<p>Repaint（重绘）：根据渲染树以及回流得到的几何信息，把每个节点绘制在屏幕上。</p>
-<p><strong>什么是回流</strong></p>
-<p>当render树中的一部分元素的规模尺寸，布局，隐藏等改变而需要重新构建，这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受到影响的部分到屏幕中，此过程叫重绘。因此回流必然会引起重绘。</p>
-<p><strong>什么是重绘</strong></p>
-<p>当render树中的一些元素的某些属性发生改变时，而这些属性只是影响元素的外观，风格，而不会影响布局，比如background-color。这就称为重绘（repaint）。重绘不一定会引起回流。</p>
-<p><strong>区别</strong></p>
-<p>回流必将引起重绘，而重绘不一定会引起回流。</p>
-<p>比如：只有颜色改变的时候就只会发生重绘而不会引起回流，而当页面布局和几何属性改变时就需要回流。display:none 会触发 reflow，而 visibility:hidden 只会触发 repaint，因为没有发生位置变化。</p>
-<p>所以我们能得知回流的成本要高于重绘，回流的花销跟render树有多少节点需要重新构建有关系。</p>
-<p>下面这些原因会引起浏览器的回流：<br>调整窗口大小，改变字体大小，CSS伪类激活（在用户交互过程中发生），添加或者删除可见的DOM元素，元素位置改变，元素尺寸改变——边距、填充、边框、宽度和高度，内容改变等。</p>
-<h2 id="如何减少回流和重绘"><a href="#如何减少回流和重绘" class="headerlink" title="如何减少回流和重绘"></a>如何减少回流和重绘</h2><p>1.浏览器中的优化机制</p>
-<p>浏览器会维护一个队列，队列中存放的是会触发回流和重绘的操作，当队列中的操作达到一定阀值或者到了一定的时间间隔时，浏览器就会清空队列，进行一个批处理。这样就会让多次的回流、重绘变成一次回流重绘。但是！当你获取元素大小和位置等布局信息的时候，比如当你访问offsetTop、scrollTop、clientTop这些属性或者使用getComputedStyle()、getBoundingClientRect（）等方法的时候，为了保证准确（得到最新的布局信息），队列会被强制清空，触发回流重绘来返回正确的值。因此，要注意这一类操作的使用！如果要使用它们，最好将值缓存起来。</p>
-<p>2.自己进行优化</p>
-<p>核心在于减少Repaint和Reflow的次数</p>
-<p>Repaint和Reflow是不可避免的，只能说对性能的影响减到最小，给出下面几条建议：</p>
-<ol>
-<li>改变样式的时候，避免逐条更改样式，而是集中修改样式，例如操作className或使用cssText。</li>
-<li>避免频繁读取元素几何属性（例如scrollTop）。</li>
-<li>使用定位让元素脱离文档流。</li>
-<li>开启css3硬件加速。</li>
-<li>可以通过批量修改dom元素的方式达到减少回流和重绘的目的，具体有以下三种方式： </li>
-</ol>
-<ul>
-<li>在设置display:none;的元素上操作，最后显示出来</li>
-<li>使用文档片段(document fragment)，在当前DOM外构建一个子树，在它上面应用所有DOM操作，再把它拷贝回文档。</li>
-<li>将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
   </entry>
   <entry>
     <title>面试题总结</title>
@@ -242,16 +77,17 @@
 <li>null 是对象原型链的终点，而 undefined 不是</li>
 <li>JSON.stringify 会将值为 undefined 的属性删除，而不会删除值为 null 的属性</li>
 </ul>
-<h2 id="js的作用域和作用域链"><a href="#js的作用域和作用域链" class="headerlink" title="js的作用域和作用域链"></a>js的作用域和作用域链</h2><p>JavaScript 的作用域是指代码中定义变量的区域，它决定了变量的可见性和生命周期¹。JavaScript 的作用域有两种类型：</p>
+<h2 id="js的作用域和作用域链"><a href="#js的作用域和作用域链" class="headerlink" title="js的作用域和作用域链"></a>js的作用域和作用域链</h2><p>JavaScript 的作用域是指代码中定义变量的区域，它决定了变量的可见性和生命周期。JS作用域主要包括全局作用域、局部作用域和ES6的块级作用域</p>
 <ul>
-<li><strong>全局作用域</strong>：在代码的任何地方都可以访问的变量，例如<code>window</code>对象或者声明在外层函数之外的变量¹。</li>
-<li><strong>局部作用域</strong>：只在特定的代码块或函数内部可以访问的变量，例如<code>let</code>、<code>const</code>或者<code>var</code>声明的变量¹。</li>
+<li><strong>全局作用域</strong>：在代码的任何地方都可以访问的变量，例如<code>window</code>对象或者声明在外层函数之外的变量。</li>
+<li><strong>局部作用域</strong>：在函数内部定义的变量,是局部变量，只能在函数内部使用</li>
+<li><strong>块级作用域</strong>：一对大括号就可以看成是一块，在这块区域中定义的变量，只能在这个区域中使用，但是在js中在这个块级作用域中定义的变量，外面也能使用。</li>
 </ul>
 <p>JavaScript 的作用域链是指在查找变量时，沿着嵌套的作用域逐级向上搜索的路径²。JavaScript 引擎遵循以下规则来解析变量：</p>
 <ul>
-<li><strong>先从当前作用域开始查找</strong>：如果当前作用域有该变量，就直接使用它；如果没有，就继续下一步²。</li>
+<li><strong>先从当前作用域开始查找</strong>：如果当前作用域有该变量，就直接使用它；如果没有，就继续下一步。</li>
 <li><strong>再从上一级作用域查找</strong>：如果上一级作用域有该变量，就使用它；如果没有，就继续下一步²。</li>
-<li><strong>重复上述步骤，直到全局作用域</strong>：如果全局作用域有该变量，就使用它；如果没有，就抛出一个引用错误²。</li>
+<li><strong>重复上述步骤，直到全局作用域</strong>：如果全局作用域有该变量，就使用它；如果没有，就抛出一个引用错误</li>
 </ul>
 <h2 id="js创建对象的几种方式"><a href="#js创建对象的几种方式" class="headerlink" title="js创建对象的几种方式"></a>js创建对象的几种方式</h2><ul>
 <li><p>工厂模式：工厂模式是用函数来封装创建对象的细节，在函数里面创建对象并返回对象</p>
@@ -428,9 +264,54 @@
 </ul>
 </li>
 </ul>
-<h2 id="如何创建一个ajax"><a href="#如何创建一个ajax" class="headerlink" title="如何创建一个ajax"></a>如何创建一个ajax</h2><p>步骤：创建xhr对象 =&gt; 配置ajax请求地址 =&gt; 发送请求 =&gt; 监听请求，接受响应</p>
-<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1、创建ajax核心对象</span></span><br><span class="line">    <span class="keyword">const</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>()</span><br><span class="line">    <span class="comment">// 2、建立连接</span></span><br><span class="line">    <span class="comment">//    - 参数1: 请求路径 常用的有: get(获取) post(提交) delete(删除) put(修改) patch(打补丁的修改)</span></span><br><span class="line">    <span class="comment">//    - 参数2: 请求路径 url</span></span><br><span class="line">    <span class="comment">//    - 参数3: boolean类型 默认为true 表示同步(false)或异步(true)</span></span><br><span class="line">    xhr.<span class="title function_">open</span>(<span class="string">&#x27;get&#x27;</span>, <span class="string">&#x27;https://api.it120.cc/fyy/shop/goods/list&#x27;</span>, <span class="literal">true</span>)</span><br><span class="line">    <span class="comment">// 3、发送请求</span></span><br><span class="line">    xhr.<span class="title function_">send</span>()</span><br><span class="line">    <span class="comment">// 4、监听服务端响应</span></span><br><span class="line">    xhr.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(xhr.<span class="property">readyState</span> == <span class="number">4</span> &amp;&amp; xhr.<span class="property">status</span> == <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="comment">// JSON.parse: 反序列化 将满足JSON格式的字符串转成对象</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">parse</span>(xhr.<span class="property">responseText</span>))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><ul>
+<li>什么时候跨域? 介绍同源策略<ul>
+<li>什么时候跨域：协议，域名，端口号有一个不一致就会跨域</li>
+<li>同源策略：同源策略是一种安全机制，，用于保护用户数据的安全性。它是浏览器实施的一种规则，用于限制来自不同源（域名、协议或端口）的文档或脚本之间的交互。</li>
+</ul>
+</li>
+<li>跨域的方式有哪几种?<ul>
+<li>JSONP</li>
+</ul>
+<ul>
+<li>iframe</li>
+<li>cors 解决跨域</li>
+<li>proxy 代理（常用）</li>
+<li>Nginx 反向代理（公司常用）</li>
+</ul>
+</li>
+</ul>
+<h2 id="jsonp的原理"><a href="#jsonp的原理" class="headerlink" title="jsonp的原理"></a>jsonp的原理</h2><ul>
+<li>动态创建script标签 利用script标签的src属性发起请求不受同源策略限制的特点 服务器会返回一段函数调用 前端要声明一个和该函数调用名字一样的函数 通过形参接收函数调用传过来的实参，只能发起get请求 </li>
+</ul>
+<h2 id="如何创建一个ajax"><a href="#如何创建一个ajax" class="headerlink" title="如何创建一个ajax"></a>如何创建一个ajax</h2><p>步骤：创建xhr对象 =&gt; 配置ajax请求地址 =&gt; 监听响应，接受响应 =&gt; 发送请求</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1、创建ajax核心对象</span></span><br><span class="line">    <span class="keyword">const</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>()</span><br><span class="line">    <span class="comment">// 2、设置请求的方法、URL 和是否异步</span></span><br><span class="line">    <span class="comment">//    - 参数1: 请求路径 常用的有: get(获取) post(提交) delete(删除) put(修改) patch(打补丁的修改)</span></span><br><span class="line">    <span class="comment">//    - 参数2: 请求路径 url</span></span><br><span class="line">    <span class="comment">//    - 参数3: boolean类型 默认为true 表示同步(false)或异步(true)</span></span><br><span class="line">    xhr.<span class="title function_">open</span>(<span class="string">&#x27;get&#x27;</span>, <span class="string">&#x27;https://api.it120.cc/fyy/shop/goods/list&#x27;</span>, <span class="literal">true</span>)</span><br><span class="line">	<span class="comment">// 3、设置请求头</span></span><br><span class="line">	xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;application/json&#x27;</span>); <span class="comment">// 设置请求头，指定请求的数据类型</span></span><br><span class="line">    <span class="comment">// 4、监听服务端响应</span></span><br><span class="line">	xhr.<span class="property">onload</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">			<span class="comment">// 请求成功</span></span><br><span class="line">			<span class="keyword">var</span> responseData = xhr.<span class="property">responseText</span>; <span class="comment">// 获取响应内容</span></span><br><span class="line">			<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">parse</span>(responseData)); </span><br><span class="line">             <span class="comment">// JSON.parse: 反序列化 将满足JSON格式的字符串转成对象</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Error: &#x27;</span> + xhr.<span class="property">status</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="comment">// 5、发起请求</span></span><br><span class="line">	xhr.<span class="title function_">send</span>();</span><br></pre></td></tr></table></figure></div>
 
+<h2 id="ajax的通信原理是什么或者axios的原理是什么"><a href="#ajax的通信原理是什么或者axios的原理是什么" class="headerlink" title="ajax的通信原理是什么或者axios的原理是什么?"></a>ajax的通信原理是什么或者axios的原理是什么?</h2><ul>
+<li><p>ajax是一种用于在客户端和服务器之间进行异步通信的技术。它的通信原理可以简要概括如下：</p>
+<ul>
+<li><p>创建 XMLHttpRequest 对象：在客户端的 JavaScript 代码中，通过创建 XMLHttpRequest 对象，可以向服务器发送异步请求。</p>
+</li>
+<li><p>发送请求：通过调用 XMLHttpRequest 对象的 open() 方法设置请求的类型（GET、POST等）、URL 和是否异步等参数，然后调用 send() 方法发送请求。</p>
+</li>
+<li><p>服务器处理请求：服务器接收到请求后，根据请求的类型和参数进行相应的处理，并生成响应数据。</p>
+</li>
+<li><p>接收响应：一旦服务器处理完请求并生成响应数据，它将通过 HTTP 响应返回给客户端。</p>
+</li>
+<li><p>更新页面：当客户端接收到响应后，可以通过回调函数处理响应数据，并根据需要更新页面内容。</p>
+</li>
+</ul>
+</li>
+<li><p>Axios 是一个基于 Promise 的现代 HTTP 客户端库，用于在浏览器和 Node.js 中发起 HTTP 请求。它封装了底层的 XMLHttpRequest 或者使用 Node.js 的 http 模块来进行通信。</p>
+<ul>
+<li>创建 XMLHttpRequest 对象：在客户端的 JavaScript 代码中，通过创建 XMLHttpRequest 对象，可以向服务器发送异步请求。</li>
+<li>发送请求：通过调用 XMLHttpRequest 对象的 open() 方法设置请求的类型（GET、POST等）、URL 和是否异步等参数，然后调用 send() 方法发送请求。</li>
+<li>服务器处理请求：服务器接收到请求后，根据请求的类型和参数进行相应的处理，并生成响应数据。</li>
+<li>接收响应：一旦服务器处理完请求并生成响应数据，它将通过 HTTP 响应返回给客户端。</li>
+<li>更新页面：当客户端接收到响应后，可以通过回调函数处理响应数据，并根据需要更新页面内容。</li>
+</ul>
+</li>
+</ul>
 <h2 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h2><p>arguments 对象是函数中传递的参数值的集合。它是一个类似数组的对象，因为它有一个 length 属性，我们可以使用数组索引表示法 arguments[1] 来访问单个值，但它没有数组中的内置方法，如：forEach、reduce、filter 和 map。</p>
 <p>我们可以使用 Array.prototype.slice 将 arguments 对象转换成一个数组</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">slice</span>.<span class="title function_">call</span>(<span class="variable language_">arguments</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
@@ -486,11 +367,22 @@
 </ul>
 </li>
 </ul>
-<h2 id="深拷贝浅拷贝"><a href="#深拷贝浅拷贝" class="headerlink" title="深拷贝浅拷贝"></a>深拷贝浅拷贝</h2><p>浅拷贝：浅拷贝会直接复制引用类型的地址值，新旧对象的地址值一样 都指向同一块内存空间(共享) 所以对新对象的操作会影响到旧对象</p>
-<p>深拷贝：深拷贝是复制了对象本身，新旧对象有自己独立的内存空间 所以对新对象的操作不会影响到旧对象</p>
-<p>可以实现浅拷贝的方法：Object.assign()，展开运算符(…)</p>
-<h2 id="解释-JavaScript-中“undefined”和“not-defined”之间的区别"><a href="#解释-JavaScript-中“undefined”和“not-defined”之间的区别" class="headerlink" title="解释 JavaScript 中“undefined”和“not defined”之间的区别"></a>解释 JavaScript 中“undefined”和“not defined”之间的区别</h2><p>当我们访问一个被声明但未被定义的变量时，会出现 undefined 错误。</p>
-<p>当我们引用一个既未声明也未定义的变量时，将会出现 not defined 错误。</p>
+<h2 id="深拷贝浅拷贝"><a href="#深拷贝浅拷贝" class="headerlink" title="深拷贝浅拷贝"></a>深拷贝浅拷贝</h2><ul>
+<li><p>浅拷贝：浅拷贝会直接复制引用类型的地址值，新旧对象的地址值一样 都指向同一块内存空间(共享) 所以对新对象的操作会影响到旧对象</p>
+</li>
+<li><p>深拷贝：深拷贝是复制了对象本身，新旧对象有自己独立的内存空间 所以对新对象的操作不会影响到旧对象</p>
+</li>
+<li><p>可以实现浅拷贝的方法：Object.assign()，展开运算符(…)</p>
+</li>
+<li><p>可以实现深拷贝的方法：对象只有一层的时候使用Object.assign()，json.stringify和json.parse，直接使用Object.create()方法</p>
+</li>
+</ul>
+<h2 id="解释-JavaScript-中“undefined”和“not-defined”之间的区别"><a href="#解释-JavaScript-中“undefined”和“not-defined”之间的区别" class="headerlink" title="解释 JavaScript 中“undefined”和“not defined”之间的区别"></a>解释 JavaScript 中“undefined”和“not defined”之间的区别</h2><ul>
+<li><p>当我们访问一个被声明但未被定义的变量时，会出现 undefined 错误。</p>
+</li>
+<li><p>当我们引用一个既未声明也未定义的变量时，将会出现 not defined 错误。</p>
+</li>
+</ul>
 <h2 id="匿名和命名函数有什么区别？"><a href="#匿名和命名函数有什么区别？" class="headerlink" title="匿名和命名函数有什么区别？"></a>匿名和命名函数有什么区别？</h2><ul>
 <li><strong>函数名</strong>：匿名函数没有指定函数名，而命名函数有指定函数名</li>
 <li><strong>调用方式</strong>：匿名函数不能直接调用，需要赋值给一个变量或者作为参数传递给其他函数，而命名函数可以直接通过函数名调用</li>
@@ -503,8 +395,22 @@
 <li>jsonp的全名叫做json with padding，就是把json对象用符合js语法的形式包裹起来以使其他的网站可以请求到，也就是将json封装成js文件传过去。</li>
 </ul>
 <h2 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h2><ul>
-<li>1、构造函数中使用代表的是当前实例化对象 谁new了我 我就指向谁</li>
-<li>2、全局环境中 this指向window 如果我们在全局中调用了函数 那么函数中的this就是指向window 谁调用我 我就指向谁</li>
+<li>在函数中，<ul>
+<li>指向调用者</li>
+<li>在事件中，<ul>
+<li>指向触发事件的元素</li>
+</ul>
+</li>
+<li>在箭头函数中，<ul>
+<li>上一层作用域的this指向</li>
+</ul>
+</li>
+<li>如果有new关键字<ul>
+<li>this指向new出来的那个对象</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="cookie，sessionStoreage和localStorage"><a href="#cookie，sessionStoreage和localStorage" class="headerlink" title="cookie，sessionStoreage和localStorage"></a>cookie，sessionStoreage和localStorage</h2><ul>
 <li>都用在客户端存储数据，每一个都有自己的存储和到期限制，</li>
@@ -534,7 +440,7 @@
 <h2 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h2><p>防抖：所有的触发都会被取消，最后一次执行在规定的时间后才会触发，也就是说，连续快速的触发多次，只有最后一次执行</p>
 <p>节流：在规定的时候内不会重新触发回调，只有大于时间间隔才会触发回调，减少事件触发的频率</p>
 <h2 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h2><ul>
-<li><p>当事件发生在DOM元素上时，该事件并不完全发生在那个元素上。在“当事件发生在DOM元素上时，该事件并不完全发生在那个元素上。</p>
+<li><p>当事件发生在DOM元素上时，该事件并不完全发生在那个元素上。</p>
 </li>
 <li><p>事件传播有三个阶段：</p>
 <ul>
@@ -545,10 +451,10 @@
 </li>
 </ul>
 <h2 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h2><ul>
-<li>当事件发生在 DOM 元素上时，该事件并不完全发生在那个元素上。在捕获阶段，事件从 window 开始，一直到触发事件的元素。<code>window----&gt; document----&gt; html----&gt; body \----&gt;目标元素</code></li>
+<li>在捕获阶段，事件从 window 开始，一直到触发事件的元素。<code>window----&gt; document----&gt; html----&gt; body \----&gt;目标元素</code></li>
 </ul>
 <h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><ul>
-<li>事件冒泡刚好与事件捕获相反，当前元素—-&gt;body -—&gt; html—-&gt;document -—&gt;window。当事件发生在 DOM 元素上时，该事件并不完全发生在那个元素上。在冒泡阶段，事件冒泡，或者事件发生在它的父代，祖父母，祖父母的父代，直到到达 window 为止。</li>
+<li>事件冒泡刚好与事件捕获相反，当前元素—-&gt;body -—&gt; html—-&gt;document -—&gt;window。在冒泡阶段，事件冒泡，或者事件发生在它的父代，祖父母，祖父母的父代，直到到达 window 为止。</li>
 </ul>
 <h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><ul>
 <li>事件委托是利用事件冒泡机制，在父元素上监听子元素的事件。通过将事件处理函数绑定到父元素上，可以实现对动态添加的子元素也能够触发相同的事件处理逻辑。当事件冒泡到父元素时，可以通过判断事件的目标元素（<code>event.target</code>）来确定具体是哪个子元素触发了事件。</li>
@@ -572,7 +478,7 @@
 <li>两者的区别：回流必将引起重绘，而重绘不一定引起回流，比如：只有颜色改变的时候就只会发生重绘而不会引起回流，当页面布局和几何属性改变时就需要回流</li>
 </ul>
 <h2 id="ES6声明变量的六种方法"><a href="#ES6声明变量的六种方法" class="headerlink" title="ES6声明变量的六种方法"></a>ES6声明变量的六种方法</h2><ul>
-<li>var,function,let,const,import,class</li>
+<li>var，function，let，const，import，class</li>
 </ul>
 <h2 id="let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？"><a href="#let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？" class="headerlink" title="let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？"></a>let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？</h2><ul>
 <li><p>var：预解析 变量提升 只提升变量名 不提升赋值，产生作用域</p>
@@ -589,7 +495,25 @@
 <li><p>变量提升：先声明变量，再进行赋值</p>
 </li>
 </ul>
-<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><h2 id="Object-assign-有什么作用"><a href="#Object-assign-有什么作用" class="headerlink" title="Object.assign()有什么作用"></a>Object.assign()有什么作用</h2><h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><h2 id="展开运算符（…）"><a href="#展开运算符（…）" class="headerlink" title="展开运算符（…）"></a>展开运算符（…）</h2><h2 id="Set和Map"><a href="#Set和Map" class="headerlink" title="Set和Map"></a>Set和Map</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><ul>
+<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><ul>
+<li> 使用反引号创建的字符串就是模板字符串 ``</li>
+<li>模板字符串中的内容允许直接换行</li>
+<li>解决了字符串和变量之间使用+拼接的繁琐工作，可以直接使用${}来识别变量</li>
+</ul>
+<h2 id="Object-assign-有什么作用"><a href="#Object-assign-有什么作用" class="headerlink" title="Object.assign()有什么作用"></a>Object.assign()有什么作用</h2><ul>
+<li><code>Object.assign()</code> 方法用于将一个或多个源对象的可枚举属性复制到目标对象。它返回目标对象。</li>
+</ul>
+<p>​    语法：<code>Object.assign(target, ...sources)</code></p>
+<ul>
+<li><code>target</code>：目标对象。</li>
+<li><code>sources</code>：一个或多个源对象。</li>
+</ul>
+<h2 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h2><p>class 类的使用</p>
+<p>​    类理解成一个对象，class可以理解成是一个创建类的语法糖，他里面的绝大部分功能，在ES5都可以实现，只不过通过class创建会让语法更加的简单清晰，更像面向对象编程</p>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><h2 id="展开运算符（…）"><a href="#展开运算符（…）" class="headerlink" title="展开运算符（…）"></a>展开运算符（…）</h2><h2 id="Set和Map"><a href="#Set和Map" class="headerlink" title="Set和Map"></a>Set和Map</h2><h2 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h2><ul>
+<li>新增的一种基本数据类型(Symbol)，所有Symbol()生成的值都是独一无二的，可以从根本上解决对象属性太多导致属性名冲突覆盖的问题。对象中Symbol()属性不能被for…in遍历，但是也不是私有属性。</li>
+</ul>
+<h2 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h2><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><ul>
 <li><p>Promise是ES6引入的异步编程的新解决方案，语法上Promise类似于一个构造函数，用来封装异步操作并可以获取成功或者失败的结果，专门用来解决回调地狱问题</p>
 </li>
 <li><p>在这个Promise的参数中传递的是一个回调函数，用来监听异步的结果，在这个回调函数中有两个参数，分贝时resolve和reject，这两个参数都是一个函数，分别代表成功和失败的回调参数，这两个参数调用时，都会返回到Promise调用一个Promise实例，该实例上有两个方法，分别是 then 和 catch，then方法对应的是resolve返回的实例，catch方法对应的是reject返回的实例</p>
@@ -613,12 +537,177 @@
 </ul>
 </li>
 </ul>
-<h2 id="async和await"><a href="#async和await" class="headerlink" title="async和await"></a>async和await</h2>]]></content>
+<h2 id="async和await是什么"><a href="#async和await是什么" class="headerlink" title="async和await是什么"></a>async和await是什么</h2><h2 id="async-await相比于Promise的优势？"><a href="#async-await相比于Promise的优势？" class="headerlink" title="async/await相比于Promise的优势？"></a>async/await相比于Promise的优势？</h2><h2 id="同步与异步的区别"><a href="#同步与异步的区别" class="headerlink" title="同步与异步的区别"></a>同步与异步的区别</h2>]]></content>
       <categories>
         <category>javascript</category>
       </categories>
       <tags>
         <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ES6(未总结完)</title>
+    <url>/2023/06/02/ES6/</url>
+    <content><![CDATA[<p><strong>ES6声明变量的六种方法</strong></p>
+<p>var，function，let，const，import，class</p>
+<p><strong>let,var,const 区别</strong></p>
+<p>var：预解析 变量提升 只提升变量名 不提升赋值，产生作用域</p>
+<p>let 定义的变量不进行预解析，不进行变量提升，产生块级作用域{}</p>
+<p>const 声明一个只读常量。一旦声明，常量的值就不能改变。(栈中的值)</p>
+<p><strong>箭头函数</strong></p>
+<p>​    1. 省略function关键字，在()和{}之间使用一个箭头连接</p>
+<p>​    2. 当形参有且只有一个的时候，()也可以省略不写</p>
+<span id="more"></span>
+
+<p>​    3. 当函数体中有且只有一条return语句时，可以省略{}及return关键字</p>
+<p>​    4. 没有自己的this指向,会查找父级作用域的this</p>
+<p>​    5. 没有arguments实参的集合</p>
+<ol start="6">
+<li><p>因为没有自己的this，所以不能作为构造函数使用</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// arguments</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn8</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">arguments</span>) <span class="comment">// Arguments(8) [1, 2, 3, 4, 5, 6, 7, 8, callee: ƒ, Symbol(Symbol.iterator): ƒ]</span></span><br><span class="line">   <span class="keyword">var</span> sum = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span>  i = <span class="number">0</span> ; i &lt; <span class="variable language_">arguments</span>.<span class="property">length</span> ; i++)&#123;</span><br><span class="line">​    sum += <span class="variable language_">arguments</span>[i]</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> sum</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">fn8</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>)) <span class="comment">// 结果是36</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 箭头函数没有arguments实参的集合</span></span><br><span class="line">  <span class="keyword">var</span> <span class="title function_">fn9</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">arguments</span>) <span class="comment">// arguments is not defined</span></span><br><span class="line">   <span class="keyword">var</span> sum = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span>  i = <span class="number">0</span> ; i &lt; <span class="variable language_">arguments</span>.<span class="property">length</span> ; i++)&#123;</span><br><span class="line">​    sum += <span class="variable language_">arguments</span>[i]</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> sum</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">fn9</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>))</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<p><strong>剩余运算符（扩展运算符）…</strong></p>
+<p>…(剩余运算符)的作用</p>
+<p>分配不了的都给它</p>
+<p>当剩余运算符在函数的形参中使用时，只允许出现在最后一个形参前面，表示剩下所有传递的实参都保存在这个参数中，以数组形式展示</p>
+<p>剩余运算符还可以作为展开数组的作用来使用，这时我们一般称之为开展运算符，或者扩展运算符，可以利用这种语法实现</p>
+<p>例如：数组合并 ，伪数组转换为真数组 等使用场景</p>
+<p>当我们需要将一个数组的每一个项作为实参的每一个值传递时，最简单的方式就是使用扩展运算符</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">var</span> arr3 = arr1.<span class="title function_">concat</span>(arr2) <span class="comment">// 合并数组</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr3) <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"><span class="comment">// 使用扩展运算符合并</span></span><br><span class="line"><span class="keyword">var</span> arr4 = [...arr1,...arr2]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr4) <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用扩展运算符找数组中最大值</span></span><br><span class="line"><span class="keyword">var</span> arr7 = [<span class="number">13</span>,<span class="number">21</span>,<span class="number">3</span>,<span class="number">3124</span>,<span class="number">32</span>,<span class="number">4532</span>,<span class="number">5</span>] </span><br><span class="line"><span class="keyword">let</span> maxNum = <span class="title class_">Math</span>.<span class="title function_">max</span>(...arr7)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(maxNum) <span class="comment">// 4532</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>模板字符串</strong></p>
+<p>   使用反引号创建的字符串就是模板字符串 ``</p>
+<p>​    * 模板字符串中的内容允许直接换行</p>
+<p>​    * 解决了字符串和变量之间使用+拼接的繁琐工作，可以直接使用${}来识别变量</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;hello  word&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> str1 = <span class="string">`hello </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">  word`</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>结构赋值</strong></p>
+<p>在ES6中允许按照一定的模式从数组或者对象中提取想要的数据</p>
+<p>左右两边的结构必须保持一致</p>
+<p>声明和赋值不能分开</p>
+<p>将繁琐的数据进行简单化处理</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 数组的结构赋值</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">&quot;张三&quot;</span>, <span class="string">&quot;李四&quot;</span>, <span class="string">&quot;王五&quot;</span>]</span><br><span class="line"><span class="keyword">var</span> [a, b, ...c] = arr</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">// 张三</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b) <span class="comment">// 李四</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c) <span class="comment">// Array(1) </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象的结构赋值</span></span><br><span class="line"><span class="comment">// 对象的属性名和解构的变量名一一对应</span></span><br><span class="line">  <span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="string">&quot;19&quot;</span>,</span><br><span class="line">    <span class="attr">job</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;web前端&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> &#123; name, job,age &#125; = obj</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(name) <span class="comment">// 张三</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(age)  <span class="comment">// 19</span></span><br><span class="line">  <span class="title function_">job</span>() <span class="comment">// web前端</span></span><br></pre></td></tr></table></figure></div>
+
+
+
+<p><strong>Symbol数据类型</strong></p>
+<p>​    ES6引入一个全新的数据类型 Symbol该类型表示独一无二的值，类型的展现方式类似于字符串</p>
+<p>​     特点：</p>
+<p>​      1） Symbol值是唯一的，那么可以解决命名冲突问题</p>
+<p>​      2） Symbol值不能和其他任何数据进行计算</p>
+<p>​      3） Symbol定义的对象属性不能使用for in进行遍历 =，Reflect.ownkeys来获取所有的键名</p>
+<p>​    Symbol()表示创建一个独一无二的值</p>
+<p>​    Symbol.for()表示创建一个独一无二的地址</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line">	</span><br><span class="line"><span class="comment">// Symbol()表示创建一个独一无二的值</span></span><br><span class="line"><span class="comment">// Symbol.for()表示创建一个独一无二的地址</span></span><br><span class="line"><span class="keyword">var</span> s1 = <span class="title class_">Symbol</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s1) <span class="comment">// Symbol()</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> s1) <span class="comment">//验证是symbol类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>  s2 = <span class="title class_">Symbol</span>(<span class="string">&quot;北工商&quot;</span>) </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s2) <span class="comment">// Symbol(北工商)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s3 = <span class="title class_">Symbol</span>(<span class="string">&quot;北工商&quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s2==s3) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s4 = <span class="title class_">Symbol</span>.<span class="title function_">for</span>(<span class="string">&quot;北工商&quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s4) <span class="comment">//Symbol(北工商)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> s4) <span class="comment">//symbol</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s2==s4) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s5 = <span class="title class_">Symbol</span>.<span class="title function_">for</span>(<span class="string">&quot;北工商&quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s5==s4) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s4.<span class="property">name</span>) <span class="comment">// undefined</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s5.<span class="property">name</span>) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>迭代器（iterator）</strong></p>
+<p>​    迭代器就是一个接口，为各种不同的数据结构提供一种统一的访问机制，任何数据结构只要部署了iterator结构，那么就可以完成访问操作</p>
+<p>​    在ES6创造了一种全新的遍历命令，for of，只要有iterator结构数据结构就可以使用for of进行遍历操作</p>
+<ul>
+<li>Array</li>
+<li>Map</li>
+<li>Set</li>
+<li>String</li>
+<li>TypedArray</li>
+<li>函数的 arguments 对象</li>
+<li>NodeList 对象</li>
+</ul>
+<p>​    默认情况下 for of 是无法遍历对象的，因为对象的原型上没有部署iterator接口</p>
+<p>   * 工作原理</p>
+<p>​    1. 创建一个指针对象，指向当前数据的起始位置</p>
+<p>​    2. 第一次调用对象的next()方法，指针会自动指向该数据的下一个成员</p>
+<p>​    3. 接下来就是不断地调用next()方法，指针一直向后移动，一直到移动到最后一个成员</p>
+<p>​    4. 每一次调用next()方法时，会返回一个包含value和done两个属性的对象，其中value表示指针指向的数据，done表示是否完成</p>
+<p>​    5. 当执行到value的值为undefined时候，done的值就会变成true，当done值为true时，next()调用就会终止</p>
+<p>   * 使用场景</p>
+<p>​     当我们需要在自定义遍历数据的时候，我们想到的就是迭代器</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">String</span>.<span class="property"><span class="keyword">prototype</span></span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>)</span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span>  str = <span class="string">&quot;hello world&quot;</span></span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">of</span> str)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(item)</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;张三&quot;</span></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// for(var item of obj)&#123;</span></span><br><span class="line"> <span class="comment">//  console.log(item)</span></span><br><span class="line"> <span class="comment">// &#125;</span></span><br><span class="line"> <span class="comment">//  obj is not iterable  Object没有iterable方法</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> arr = [<span class="string">&quot;独行月球&quot;</span>,<span class="string">&quot;疯狂外星人&quot;</span>,<span class="string">&quot;疯狂的石头&quot;</span>,<span class="string">&quot;疯狂原始人&quot;</span>]</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">of</span> arr)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(item)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">var</span> it = arr[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]()</span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it) <span class="comment">// Array Iterator &#123;&#125;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it.<span class="title function_">next</span>()) <span class="comment">//&#123;value: &#x27;独行月球&#x27;, done: false&#125;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it.<span class="title function_">next</span>()) <span class="comment">//&#123;value: &#x27;疯狂外星人&#x27;, done: false&#125;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it.<span class="title function_">next</span>()) <span class="comment">//&#123;value: &#x27;疯狂的石头&#x27;, done: false&#125;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it.<span class="title function_">next</span>()) <span class="comment">//&#123;value: &#x27;疯狂原始人&#x27;, done: false&#125;</span></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(it.<span class="title function_">next</span>()) <span class="comment">//&#123;value: undefined, done: true&#125;</span></span><br></pre></td></tr></table></figure></div>
+
+<p><strong>Promise</strong></p>
+<p> Promise是ES6引入的异步编程的新解决方案，语法上Promise类似于一个构造函数，用来封装异步操作并可以获取成功或者失败的结果，专门用来解决回调地狱问题</p>
+<p> 在Promise的参数中传递的是一个回调函数，用来监听异步的结果，在这个回调函数中有两个参数，分别是resolve，reject </p>
+<p> resolve和reject 两个参数都是一个函数，分别表示成功和失败的回调参数</p>
+<p> 这两个参数调用时都会返回到Promise调用处一个Promise实例，该实例上有两个方法，分别是then 和 catch</p>
+<p>  then方法对应的是resolve返回的实例</p>
+<p>  catch方法对应的是reject返回的实例</p>
+<p>  then方法中可以接收两个参数，第一个参数是成功的回调，第二个参数则是失败的回调，</p>
+<p>  也就是说如果我们不想写catch 那么可以将catch的内容写在then方法的第二个参数中</p>
+<p>  <strong>Promise.all()</strong></p>
+<p>   作用：并行操作异步处理，当我们需要同时发起多个异步请求时而且需要对请求的结果做处理，这时我们就要考虑使用all方法</p>
+<p>  <strong>Promise有三个状态</strong></p>
+<p>   初始态：pending</p>
+<p>   在Promise中没有执行resolve 或者 reject的状态</p>
+<p>   成功态：fulfilled</p>
+<p>   失败态：rejected</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">1</span></span><br><span class="line">  <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> (<span class="params">resolve,reject</span>)&#123;</span><br><span class="line">   <span class="comment">// if(num &lt; 2)&#123;</span></span><br><span class="line">   <span class="comment">//  resolve(&#x27;成功&#x27;)</span></span><br><span class="line">   <span class="comment">// &#125;else&#123;</span></span><br><span class="line">   <span class="comment">//  reject(&#x27;失败&#x27;)</span></span><br><span class="line">   <span class="comment">// &#125;</span></span><br><span class="line">      </span><br><span class="line">   <span class="comment">// 写一些异步操作</span></span><br><span class="line">​    <span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">​     <span class="keyword">var</span> data = <span class="string">&quot;请求到的数据&quot;</span></span><br><span class="line">​     <span class="title function_">resolve</span>(data)</span><br><span class="line">​     <span class="title function_">reject</span>(<span class="string">&quot;err&quot;</span>)</span><br><span class="line">​    &#125;,<span class="number">2000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  p.<span class="title function_">catch</span>(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(err)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  p.<span class="title function_">then</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(p)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>)</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>集合：Map Set</strong> </p>
+<p>   ES6提供了新的数据结构Set，类似于数组，但是具有成员唯一性的特性</p>
+<p>   访问Set集合中的数据可以使用 for of 遍历来访问</p>
+<p>**Set主要的应用场景在于 数据重组  **</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// size返回集合元素的个数</span></span><br><span class="line"><span class="comment">// add() ：为当前集合新增一个新的成员,返回当前集合</span></span><br><span class="line"><span class="comment">// delete() : 为当前集合删除一个指定成员,返回boolean值</span></span><br><span class="line"><span class="comment">// clear() : 清空集合,返回undefined</span></span><br><span class="line"><span class="comment">// hsa() : 检测集合中是否存在某个成员，返回Boolean类型的</span></span><br><span class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="string">&quot;111&quot;</span>,<span class="string">&quot;222&quot;</span>,<span class="string">&quot;333&quot;</span>,<span class="string">&quot;111&quot;</span>])</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s1) <span class="comment">// Set(3) &#123;&#x27;111&#x27;, &#x27;222&#x27;, &#x27;333&#x27;&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s1.<span class="property">size</span>) <span class="comment">// 3</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">of</span> s1)&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(item) <span class="comment">// 111 222 333 </span></span><br><span class="line">  &#125;</span><br><span class="line">  s1.<span class="title function_">add</span>(<span class="string">&quot;444&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s1) <span class="comment">// Set(4) &#123;&#x27;111&#x27;, &#x27;222&#x27;, &#x27;333&#x27;, &#x27;444&#x27;&#125;</span></span><br><span class="line">  s1.<span class="title function_">delete</span>(<span class="string">&quot;222&quot;</span>) <span class="comment">// Set(3) &#123;&#x27;111&#x27;, &#x27;333&#x27;, &#x27;444&#x27;&#125;</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s1)</span><br><span class="line">  s1.<span class="title function_">clear</span>() </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s1) <span class="comment">// Set(0) &#123;size: 0&#125;</span></span><br><span class="line">  <span class="keyword">var</span> boo = s1.<span class="title function_">has</span>(<span class="string">&quot;444&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(boo) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// Set的值是唯一的 不可以重复且自动排序</span></span><br><span class="line">  <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">65</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">8</span>]</span><br><span class="line">  <span class="keyword">var</span> s2 = <span class="keyword">new</span> <span class="title class_">Set</span>(arr)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s2) <span class="comment">// Set(6) &#123;1, 2, 4, 65, 7, …&#125;</span></span><br><span class="line">  <span class="keyword">var</span> arr2 = [...s2]</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(arr2) <span class="comment">// (6) [1, 2, 4, 65, 7, 8]</span></span><br></pre></td></tr></table></figure></div>
+
+<p> <strong>Map 主要的应用场景在于数据储存</strong></p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Map: </span></span><br><span class="line"><span class="comment">// ES6提出的心的数据结构，类似于对象，也是键值对的集合</span></span><br><span class="line"><span class="comment">// set() ：为集合添加新的成员，返回添加后的集合</span></span><br><span class="line"><span class="comment">// get() : 获取对应键名的值</span></span><br><span class="line"><span class="comment">// has() : 判断集合中是否存在某个成员 返回 boolean 值</span></span><br><span class="line"><span class="comment">// size() ：返回 Map 的元素个数</span></span><br><span class="line"><span class="comment">// clear() : 清空集合，返回 undefined</span></span><br><span class="line"><span class="comment">// delete(): 通过键值从Map中移除对应的数据</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> m1 = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">  m1.<span class="title function_">set</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&quot;张三&quot;</span>)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(m1) </span><br><span class="line">  <span class="comment">// Map(1) &#123;&#x27;name&#x27; =&gt; &#x27;张三&#x27;&#125;</span></span><br><span class="line">  <span class="comment">// key: &quot;name&quot;</span></span><br><span class="line">  <span class="comment">// value: &quot;张三&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> m1 = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">    m1.<span class="title function_">set</span>(<span class="string">&#x27;name&#x27;</span>,<span class="string">&quot;张三&quot;</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(m1)</span><br><span class="line">		<span class="comment">// Map(1) &#123;&#x27;name&#x27; =&gt; &#x27;张三&#x27;&#125;</span></span><br><span class="line">  		<span class="comment">// key: &quot;name&quot;</span></span><br><span class="line">  		<span class="comment">// value: &quot;张三&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> key = &#123;</span><br><span class="line">      <span class="attr">school</span>:<span class="string">&quot;北工商&quot;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    m1.<span class="title function_">set</span>(key,[<span class="string">&#x27;北京&#x27;</span>,<span class="string">&quot;上海&quot;</span>])</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(m1)</span><br><span class="line">	<span class="comment">//对象相同的键连续赋值，后一次的值会覆盖前一次的值</span></span><br><span class="line">	<span class="comment">//注意:只有对同一个对象的引用，Map结构才将其视为同一个键，引用数据类型必须内存地址一样，才可能是同一个键</span></span><br><span class="line">		<span class="comment">// 0: &#123;&quot;name&quot; =&gt; &quot;张三&quot;&#125;</span></span><br><span class="line">		<span class="comment">// key: &quot;name&quot;</span></span><br><span class="line">  		<span class="comment">// value: &quot;张三&quot;</span></span><br><span class="line">        <span class="comment">// 1: &#123;Object =&gt; Array(2)&#125;</span></span><br><span class="line">		<span class="comment">// key: &#123;school: &#x27;北工商&#x27;&#125;</span></span><br><span class="line">  		<span class="comment">// value: (2) [&#x27;北京&#x27;, &#x27;上海&#x27;]</span></span><br><span class="line"></span><br><span class="line">    m1.<span class="title function_">set</span>([<span class="string">&quot;name1&quot;</span>,<span class="string">&quot;李四&quot;</span>])</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(m1)</span><br><span class="line">	<span class="comment">// 如果读取一个未知的键，则返回undefined</span></span><br><span class="line">		<span class="comment">// 0: &#123;&quot;name&quot; =&gt; &quot;张三&quot;&#125;</span></span><br><span class="line">		<span class="comment">// key: &quot;name&quot;</span></span><br><span class="line">  		<span class="comment">// value: &quot;张三&quot;</span></span><br><span class="line">        <span class="comment">// 1: &#123;Object =&gt; Array(2)&#125;</span></span><br><span class="line">		<span class="comment">// key: &#123;school: &#x27;北工商&#x27;&#125;</span></span><br><span class="line">  		<span class="comment">// value: (2) [&#x27;北京&#x27;, &#x27;上海&#x27;]</span></span><br><span class="line">		<span class="comment">// 2: &#123;Array(2) =&gt; undefined&#125;</span></span><br><span class="line">		<span class="comment">// key: (2) [&#x27;name1&#x27;, &#x27;李四&#x27;]</span></span><br><span class="line">		<span class="comment">// value: undefined</span></span><br></pre></td></tr></table></figure></div>
+
+]]></content>
+      <categories>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>回流与重绘</title>
+    <url>/2022/11/15/ReflowandRepaint/</url>
+    <content><![CDATA[<hr>
+<p><strong>在回流和重绘之前先来了解一下的浏览器的渲染过程</strong></p>
+<ol>
+<li><strong>解析HTML文件</strong>，构建DOM树（Document Object Model），表示页面的结构和内容。</li>
+<li><strong>解析CSS文件</strong>，构建CSSOM树（CSS Object Model），表示页面的样式和布局。</li>
+<li><strong>合并DOM树和CSSOM树</strong>，生成渲染树（Render Tree），表示页面的可见元素和属性。</li>
+<li><strong>布局渲染树</strong>，计算每个元素的位置和大小，生成布局（Layout）。</li>
+<li><strong>绘制渲染树</strong>，将每个元素绘制到屏幕上，生成像素（Paint）。</li>
+<li><strong>合成图层</strong>，将多个图层合并为一张位图，显示在屏幕上（Composite）。</li>
+</ol>
+<p>在这个过程中，还可能涉及到<strong>加载图片等资源文件</strong>和<strong>执行解析js文件脚本代码</strong>等操作，这些操作可能会影响DOM树、CSSOM树或渲染树的更新，从而触发重排（Reflow）或重绘（Repaint）。</p>
+<span id="more"></span>
+
+<p>Reflow（回流)：在render树的基础上进行布局, 计算每个节点的大小和位置。</p>
+<p>Repaint（重绘）：根据渲染树以及回流得到的几何信息，把每个节点绘制在屏幕上。</p>
+<p><strong>什么是回流</strong></p>
+<p>当render树中的一部分元素的规模尺寸，布局，隐藏等改变而需要重新构建，这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受到影响的部分到屏幕中，此过程叫重绘。因此回流必然会引起重绘。</p>
+<p><strong>什么是重绘</strong></p>
+<p>当render树中的一些元素的某些属性发生改变时，而这些属性只是影响元素的外观，风格，而不会影响布局，比如background-color。这就称为重绘（repaint）。重绘不一定会引起回流。</p>
+<p><strong>区别</strong></p>
+<p>回流必将引起重绘，而重绘不一定会引起回流。</p>
+<p>比如：只有颜色改变的时候就只会发生重绘而不会引起回流，而当页面布局和几何属性改变时就需要回流。display:none 会触发 reflow，而 visibility:hidden 只会触发 repaint，因为没有发生位置变化。</p>
+<p>所以我们能得知回流的成本要高于重绘，回流的花销跟render树有多少节点需要重新构建有关系。</p>
+<p>下面这些原因会引起浏览器的回流：<br>调整窗口大小，改变字体大小，CSS伪类激活（在用户交互过程中发生），添加或者删除可见的DOM元素，元素位置改变，元素尺寸改变——边距、填充、边框、宽度和高度，内容改变等。</p>
+<h2 id="如何减少回流和重绘"><a href="#如何减少回流和重绘" class="headerlink" title="如何减少回流和重绘"></a>如何减少回流和重绘</h2><p>1.浏览器中的优化机制</p>
+<p>浏览器会维护一个队列，队列中存放的是会触发回流和重绘的操作，当队列中的操作达到一定阀值或者到了一定的时间间隔时，浏览器就会清空队列，进行一个批处理。这样就会让多次的回流、重绘变成一次回流重绘。但是！当你获取元素大小和位置等布局信息的时候，比如当你访问offsetTop、scrollTop、clientTop这些属性或者使用getComputedStyle()、getBoundingClientRect（）等方法的时候，为了保证准确（得到最新的布局信息），队列会被强制清空，触发回流重绘来返回正确的值。因此，要注意这一类操作的使用！如果要使用它们，最好将值缓存起来。</p>
+<p>2.自己进行优化</p>
+<p>核心在于减少Repaint和Reflow的次数</p>
+<p>Repaint和Reflow是不可避免的，只能说对性能的影响减到最小，给出下面几条建议：</p>
+<ol>
+<li>改变样式的时候，避免逐条更改样式，而是集中修改样式，例如操作className或使用cssText。</li>
+<li>避免频繁读取元素几何属性（例如scrollTop）。</li>
+<li>使用定位让元素脱离文档流。</li>
+<li>开启css3硬件加速。</li>
+<li>可以通过批量修改dom元素的方式达到减少回流和重绘的目的，具体有以下三种方式： </li>
+</ol>
+<ul>
+<li>在设置display:none;的元素上操作，最后显示出来</li>
+<li>使用文档片段(document fragment)，在当前DOM外构建一个子树，在它上面应用所有DOM操作，再把它拷贝回文档。</li>
+<li>将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
 </search>
