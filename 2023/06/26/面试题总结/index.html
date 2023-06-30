@@ -30,7 +30,7 @@
 <meta property="og:description" content="JavaScript，ES6，Vue，NodeJs，React知识点总结 JavaScript&amp;&amp;ES6js的数据类型及其存储方式 基本数据类型：Number，String，Boolean，Null，Undefined，Symbol  引用数据类型：Object，Array，Function，Date等等…  存储方式：基本数据类型存储的是值，存在栈中，数据无法修改,可以比较(比较">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-30T03:09:13.430Z">
+<meta property="article:modified_time" content="2023-06-30T03:15:36.131Z">
 <meta property="article:author" content="多吃蒸菜">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -466,8 +466,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-06-30 11:09:13</span>
-            <span class="mobile">2023-06-30 11:09</span>
+            <span class="desktop">2023-06-30 11:15:36</span>
+            <span class="mobile">2023-06-30 11:15</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -573,7 +573,7 @@
 <li>null 是对象原型链的终点，而 undefined 不是</li>
 <li>JSON.stringify 会将值为 undefined 的属性删除，而不会删除值为 null 的属性</li>
 </ul>
-<h2 id="js的作用域和作用域链"><a href="#js的作用域和作用域链" class="headerlink" title="js的作用域和作用域链"></a>js的作用域和作用域链</h2><p>JavaScript 的作用域是指代码中定义变量的区域，它决定了变量的可见性和生命周期。JS作用域主要包括全局作用域、局部作用域和ES6的块级作用域</p>
+<h4 id="js的作用域和作用域链"><a href="#js的作用域和作用域链" class="headerlink" title="js的作用域和作用域链"></a>js的作用域和作用域链</h4><p>JavaScript 的作用域是指代码中定义变量的区域，它决定了变量的可见性和生命周期。JS作用域主要包括全局作用域、局部作用域和ES6的块级作用域</p>
 <ul>
 <li><strong>全局作用域</strong>：在代码的任何地方都可以访问的变量，例如<code>window</code>对象或者声明在外层函数之外的变量。</li>
 <li><strong>局部作用域</strong>：在函数内部定义的变量,是局部变量，只能在函数内部使用</li>
@@ -585,7 +585,7 @@
 <li><strong>再从上一级作用域查找</strong>：如果上一级作用域有该变量，就使用它；如果没有，就继续下一步²。</li>
 <li><strong>重复上述步骤，直到全局作用域</strong>：如果全局作用域有该变量，就使用它；如果没有，就抛出一个引用错误</li>
 </ul>
-<h2 id="js创建对象的几种方式"><a href="#js创建对象的几种方式" class="headerlink" title="js创建对象的几种方式"></a>js创建对象的几种方式</h2><ul>
+<h4 id="js创建对象的几种方式"><a href="#js创建对象的几种方式" class="headerlink" title="js创建对象的几种方式"></a>js创建对象的几种方式</h4><ul>
 <li><p>工厂模式：工厂模式是用函数来封装创建对象的细节，在函数里面创建对象并返回对象</p>
 </li>
 <li><p>构造函数模式：使用一个自定义的函数作为构造函数，然后用 new 关键字创建一个新对象</p>
@@ -601,23 +601,23 @@
 <p>2、全局环境中 this指向window 如果我们在全局中调用了函数 那么函数中的this就是指向window 谁调用我 我就指向谁</p>
 </li>
 </ul>
-<h2 id="箭头函数和普通函数的区别"><a href="#箭头函数和普通函数的区别" class="headerlink" title="箭头函数和普通函数的区别"></a>箭头函数和普通函数的区别</h2><ul>
+<h4 id="箭头函数和普通函数的区别"><a href="#箭头函数和普通函数的区别" class="headerlink" title="箭头函数和普通函数的区别"></a>箭头函数和普通函数的区别</h4><ul>
 <li>箭头函数中的this指向的是定义时的this，而不是执行时的this，普通函数的this，谁调用就指向谁，没有调用者，就指向全局对象，</li>
 <li>箭头函数没有自己的this，继承父类的this，不能作为构造函数使用，call，apply，bind，不能改变箭头函数的this指向，没有自己的arguments，没有prototype</li>
 </ul>
-<h2 id="js实现继承的几种方式"><a href="#js实现继承的几种方式" class="headerlink" title="js实现继承的几种方式"></a>js实现继承的几种方式</h2><p>ES5实现继承主要是基于prototype来实现的，具体有三种方法<br>原型链继承：即 B.prototype=new A()<br>借用构造函数继承：(call或者apply的方式继承)</p>
+<h4 id="js实现继承的几种方式"><a href="#js实现继承的几种方式" class="headerlink" title="js实现继承的几种方式"></a>js实现继承的几种方式</h4><p>ES5实现继承主要是基于prototype来实现的，具体有三种方法<br>原型链继承：即 B.prototype=new A()<br>借用构造函数继承：(call或者apply的方式继承)</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Cat2</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="title class_">Animal</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name || <span class="string">&#x27;Tom&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat2 = <span class="keyword">new</span> <span class="title class_">Cat2</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(cat2.<span class="property">name</span>); <span class="comment">//Tom</span></span><br></pre></td></tr></table></figure></div>
 
 <p>组合继承：组合继承是结合第一种和第二种方式</p>
 <p>ES6继承是目前比较新，并且主流的继承方式，用class定义类，用extends继承类，用super()表示<br>父类</p>
-<h2 id="call、apply、bind的区别"><a href="#call、apply、bind的区别" class="headerlink" title="call、apply、bind的区别"></a>call、apply、bind的区别</h2><ul>
+<h4 id="call、apply、bind的区别"><a href="#call、apply、bind的区别" class="headerlink" title="call、apply、bind的区别"></a>call、apply、bind的区别</h4><ul>
 <li><strong>call</strong>：接收一个指定的 this 值和若干个参数，然后调用函数，返回函数的执行结果。</li>
 <li><strong>apply</strong>：接收一个指定的 this 值和一个数组或类数组对象作为参数，然后调用函数，返回函数的执行结果。</li>
 <li><strong>bind</strong>：接收一个指定的 this 值和若干个参数，然后返回一个新的函数，新的函数在调用时会使用指定的 this 值和参数。</li>
 </ul>
 <p>三者函数的作用都是用来改变this指向的，区别在于语法的不同。</p>
 <p>apply和call的区别是 call方法接收的是若干个参数列表，而apply接收的是一个包含多个参数的数组，而bind方法时创建一个新的函数，当被调用时，将其this关键字设置为提供的值，在调用新函数时，在任何提供之前提供一个给定的参数序列</p>
-<h2 id="说一下JS原生常用dom操作方法？"><a href="#说一下JS原生常用dom操作方法？" class="headerlink" title="说一下JS原生常用dom操作方法？"></a>说一下JS原生常用dom操作方法？</h2><ul>
+<h4 id="说一下JS原生常用dom操作方法？"><a href="#说一下JS原生常用dom操作方法？" class="headerlink" title="说一下JS原生常用dom操作方法？"></a>说一下JS原生常用dom操作方法？</h4><ul>
 <li><p>js原生dom操作方法有</p>
 <ul>
 <li>​    查找：<ul>
@@ -647,13 +647,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="什么是JavaScript原型，原型链-有什么特点？"><a href="#什么是JavaScript原型，原型链-有什么特点？" class="headerlink" title="什么是JavaScript原型，原型链 ? 有什么特点？"></a>什么是JavaScript原型，原型链 ? 有什么特点？</h2><ul>
+<h4 id="什么是JavaScript原型，原型链-有什么特点？"><a href="#什么是JavaScript原型，原型链-有什么特点？" class="headerlink" title="什么是JavaScript原型，原型链 ? 有什么特点？"></a>什么是JavaScript原型，原型链 ? 有什么特点？</h4><ul>
 <li><strong>原型</strong>：JavaScript中的每个函数都有一个 prototype 属性，这个属性指向一个对象，这个对象就是函数的原型对象。原型对象包含了函数的共享属性和方法，可以被函数的所有实例继承。</li>
 <li><strong>原型链</strong>：JavaScript中的每个对象都有一个 <code>__proto__</code> 属性，这个属性指向对象的原型，也就是构造函数的 prototype 属性。通过 <code>__proto__</code>  属性，对象可以访问到原型上的属性和方法。原型对象也有自己的<code>__proto__</code> 属性，指向更上一层的原型，这样就形成了一个链式结构，称为原型链。原型链的终点是 Object.prototype ，它的<code>__proto__</code> 属性指向 null 。</li>
 <li>特点：</li>
 <li>JavaScript 对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与之相关的对象也会继承这一改变，当我们需要一个属性的时， Javascript 引擎会先看当前对象中是否有这个属性， 如果没有的就会查找他的Prototype 对象是否有这个属性，如此递推下去，一直检索到Object 内建对象</li>
 </ul>
-<h2 id="构造函数-实例对象-原型三者之间的关系"><a href="#构造函数-实例对象-原型三者之间的关系" class="headerlink" title="构造函数 实例对象 原型三者之间的关系"></a>构造函数 实例对象 原型三者之间的关系</h2><p>构造函数通过原型创建实例对象，实例对象通过原型链与原型建立关联，并可以共享原型上的属性和方法。</p>
+<h4 id="构造函数-实例对象-原型三者之间的关系"><a href="#构造函数-实例对象-原型三者之间的关系" class="headerlink" title="构造函数 实例对象 原型三者之间的关系"></a>构造函数 实例对象 原型三者之间的关系</h4><p>构造函数通过原型创建实例对象，实例对象通过原型链与原型建立关联，并可以共享原型上的属性和方法。</p>
 <ul>
 <li><p>首先，<strong>构造函数</strong>有一个<strong>prototype属性</strong>指向它的prototype原型对象；</p>
 </li>
@@ -668,7 +668,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><ul>
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><ul>
 <li><p>闭包是指在一个函数内部创建的函数，它可以访问和操作外部函数的变量和参数，即使外部函数已经执行完毕，闭包仍然可以保持对这些变量的引用。</p>
 </li>
 <li><p><strong>好处</strong>：闭包有以下几个好处：</p>
@@ -688,7 +688,7 @@
 <li><p>在不需要使用闭包时将其赋值为 null ，让垃圾回收机制回收它，解决内存泄露</p>
 </li>
 </ul>
-<h2 id="js作用域"><a href="#js作用域" class="headerlink" title="js作用域"></a>js作用域</h2><p>JS作用域也就是JS识别变量的范围，作用域链也就是JS查找变量的顺序</p>
+<h4 id="js作用域"><a href="#js作用域" class="headerlink" title="js作用域"></a>js作用域</h4><p>JS作用域也就是JS识别变量的范围，作用域链也就是JS查找变量的顺序</p>
 <ul>
 <li><p>​    先说作用域，JS作用域主要包括全局作用域、局部作用域和ES6的块级作用域</p>
 <ul>
@@ -700,7 +700,7 @@
 <p>​      2. 而所谓的作用域链就是由最内部的作用域往最外部,查找变量的过程.形成的链条就是作用域链</p>
 </li>
 </ul>
-<h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><ul>
+<h4 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h4><ul>
 <li><p><strong>不改变原数组的方法</strong>：这些方法不会修改原数组，而是返回一个新的数组或其他值。例如：</p>
 <ul>
 <li>concat()：用于连接两个或多个数组，返回一个新的数组。</li>
@@ -733,7 +733,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h2><ul>
+<h4 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h4><ul>
 <li><strong>不改变原字符串的方法</strong>：这些方法不会修改原字符串，而是返回一个新的字符串或其他值。例如：<ul>
 <li>charAt(x)：用于返回字符串中指定位置的字符，位置从0开始计算。</li>
 <li>charCodeAt(x)：用于返回字符串中指定位置的字符的Unicode编码值。</li>
@@ -760,7 +760,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><ul>
+<h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h4><ul>
 <li>什么时候跨域? 介绍同源策略<ul>
 <li>什么时候跨域：协议，域名，端口号有一个不一致就会跨域</li>
 <li>同源策略：所谓的同源策略其实是浏览器的一种机制，只允许在同源，也就是同协议、同域名、同端口的的情况下才能进行数据交互。</li>
@@ -777,13 +777,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="jsonp的原理"><a href="#jsonp的原理" class="headerlink" title="jsonp的原理"></a>jsonp的原理</h2><ul>
+<h4 id="jsonp的原理"><a href="#jsonp的原理" class="headerlink" title="jsonp的原理"></a>jsonp的原理</h4><ul>
 <li>动态创建script标签 利用script标签的src属性发起请求不受同源策略限制的特点 服务器会返回一段函数调用 前端要声明一个和该函数调用名字一样的函数 通过形参接收函数调用传过来的实参，只能发起get请求 </li>
 </ul>
-<h2 id="如何创建一个ajax"><a href="#如何创建一个ajax" class="headerlink" title="如何创建一个ajax"></a>如何创建一个ajax</h2><p>步骤：创建xhr对象 =&gt; 配置ajax请求地址 =&gt; 监听响应，接受响应 =&gt; 发送请求</p>
+<h4 id="如何创建一个ajax"><a href="#如何创建一个ajax" class="headerlink" title="如何创建一个ajax"></a>如何创建一个ajax</h4><p>步骤：创建xhr对象 =&gt; 配置ajax请求地址 =&gt; 监听响应，接受响应 =&gt; 发送请求</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、创建ajax核心对象</span></span><br><span class="line">    <span class="keyword">const</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>()</span><br><span class="line">    <span class="comment">// 2、设置请求的方法、URL 和是否异步</span></span><br><span class="line">    <span class="comment">//    - 参数1: 请求路径 常用的有: get(获取) post(提交) delete(删除) put(修改) patch(打补丁的修改)</span></span><br><span class="line">    <span class="comment">//    - 参数2: 请求路径 url</span></span><br><span class="line">    <span class="comment">//    - 参数3: boolean类型 默认为true 表示同步(false)或异步(true)</span></span><br><span class="line">    xhr.<span class="title function_">open</span>(<span class="string">&#x27;get&#x27;</span>, <span class="string">&#x27;https://api.it120.cc/fyy/shop/goods/list&#x27;</span>, <span class="literal">true</span>)</span><br><span class="line">	<span class="comment">// 3、设置请求头</span></span><br><span class="line">	xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;application/json&#x27;</span>); <span class="comment">// 设置请求头，指定请求的数据类型</span></span><br><span class="line">	<span class="comment">// 发起请求</span></span><br><span class="line">	xhr.<span class="title function_">send</span>();</span><br><span class="line">    <span class="comment">// 4、监听服务端响应</span></span><br><span class="line">	xhr.<span class="property">onload</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (xhr.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">			<span class="comment">// 请求成功</span></span><br><span class="line">			<span class="keyword">var</span> responseData = xhr.<span class="property">responseText</span>; <span class="comment">// 获取响应内容</span></span><br><span class="line">			<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">parse</span>(responseData)); </span><br><span class="line">             <span class="comment">// JSON.parse: 反序列化 将满足JSON格式的字符串转成对象</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Error: &#x27;</span> + xhr.<span class="property">status</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
-<h2 id="ajax的通信原理是什么或者axios的原理是什么"><a href="#ajax的通信原理是什么或者axios的原理是什么" class="headerlink" title="ajax的通信原理是什么或者axios的原理是什么?"></a>ajax的通信原理是什么或者axios的原理是什么?</h2><ul>
+<h4 id="ajax的通信原理是什么或者axios的原理是什么"><a href="#ajax的通信原理是什么或者axios的原理是什么" class="headerlink" title="ajax的通信原理是什么或者axios的原理是什么?"></a>ajax的通信原理是什么或者axios的原理是什么?</h4><ul>
 <li><p>ajax是一种用于在客户端和服务器之间进行异步通信的技术。它的通信原理可以简要概括如下：</p>
 <ul>
 <li><p>创建 XMLHttpRequest 对象：在客户端的 JavaScript 代码中，通过创建 XMLHttpRequest 对象，可以向服务器发送异步请求。</p>
@@ -808,19 +808,19 @@
 </ul>
 </li>
 </ul>
-<h2 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h2><p>arguments 对象是函数中传递的参数值的集合。它是一个类似数组的对象，因为它有一个 length 属性，我们可以使用数组索引表示法 arguments[1] 来访问单个值，但它没有数组中的内置方法，如：forEach、reduce、filter 和 map。</p>
+<h4 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h4><p>arguments 对象是函数中传递的参数值的集合。它是一个类似数组的对象，因为它有一个 length 属性，我们可以使用数组索引表示法 arguments[1] 来访问单个值，但它没有数组中的内置方法，如：forEach、reduce、filter 和 map。</p>
 <p>我们可以使用 Array.prototype.slice 将 arguments 对象转换成一个数组</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">slice</span>.<span class="title function_">call</span>(<span class="variable language_">arguments</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>箭头函数中没有arguments对象</p>
-<h2 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h2><p>造成内存泄漏可能操作</p>
+<h4 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h4><p>造成内存泄漏可能操作</p>
 <ul>
 <li>意外的全局变量</li>
 <li>被遗忘的计时器或回调函数</li>
 <li>脱离 DOM 的引用</li>
 <li>闭包</li>
 </ul>
-<h2 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h2><ul>
+<h4 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h4><ul>
 <li>新增了块级作用域(let,const)</li>
 <li>提供了定义类的语法糖(class)</li>
 <li>新增了一种基本数据类型(Symbol)</li>
@@ -833,21 +833,21 @@
 <li>ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例</li>
 <li>ES6 新增了生成器(Generator)和遍历器(Iterator)</li>
 </ul>
-<h2 id="面向对象理解"><a href="#面向对象理解" class="headerlink" title="面向对象理解"></a>面向对象理解</h2><ul>
+<h4 id="面向对象理解"><a href="#面向对象理解" class="headerlink" title="面向对象理解"></a>面向对象理解</h4><ul>
 <li>面向对象是一种开发思想 它将复杂的过程简单化，让我们从开发者变成了指挥者 指挥对象做事情、在实际开发过程中，需要面对很多方法，方法与方法之间又没有联系，于是使用面向对象的思想对方法进行了对象的封装（不会这个）</li>
 <li>面向对象编程的基本原则包括：封装、多态、抽象(一个事物在不同环境下的不同表现形式)</li>
 </ul>
-<h2 id="从输入URL到页面加载完中间发生了什么"><a href="#从输入URL到页面加载完中间发生了什么" class="headerlink" title="从输入URL到页面加载完中间发生了什么"></a>从输入URL到页面加载完中间发生了什么</h2><ul>
+<h4 id="从输入URL到页面加载完中间发生了什么"><a href="#从输入URL到页面加载完中间发生了什么" class="headerlink" title="从输入URL到页面加载完中间发生了什么"></a>从输入URL到页面加载完中间发生了什么</h4><ul>
 <li>输入完URL通过DNS解析找到这个地址对应的服务器地址(ip),通过TCP请求链接服务,通过WEB服务器(apache)返回数据,浏览器根据返回数据构建DOM树,通过css渲染引擎及js解析引擎将页面渲染出来,关闭tcp连接</li>
 </ul>
-<h2 id="ES6模块与CommonJS模块有什么区别？"><a href="#ES6模块与CommonJS模块有什么区别？" class="headerlink" title="ES6模块与CommonJS模块有什么区别？"></a>ES6模块与CommonJS模块有什么区别？</h2><ul>
+<h4 id="ES6模块与CommonJS模块有什么区别？"><a href="#ES6模块与CommonJS模块有什么区别？" class="headerlink" title="ES6模块与CommonJS模块有什么区别？"></a>ES6模块与CommonJS模块有什么区别？</h4><ul>
 <li>1、CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。CommonJS 模块输出的是值的，也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。ES6 模块的运行机制与 CommonJS 不一样。JS 引擎对脚本静态分析的时候，遇到模块加载命令 import，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。</li>
 <li>2、CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。CommonJS 模块就是对象，即在输入时是先加载整个模块，生成一个对象，然后再从这个对象上面读取方法，这种加载称为“运行时加载”。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成。</li>
 </ul>
-<h2 id="DOM和BOM"><a href="#DOM和BOM" class="headerlink" title="DOM和BOM"></a>DOM和BOM</h2><ul>
+<h4 id="DOM和BOM"><a href="#DOM和BOM" class="headerlink" title="DOM和BOM"></a>DOM和BOM</h4><ul>
 <li>DOM 是针对文档的对象模型，用于表示和操作文档中的元素和内容；BOM 是浏览器的对象模型，用于操作浏览器窗口和浏览器本身的功能</li>
 </ul>
-<h2 id="简述同步与异步的区别"><a href="#简述同步与异步的区别" class="headerlink" title="简述同步与异步的区别"></a>简述同步与异步的区别</h2><ul>
+<h4 id="简述同步与异步的区别"><a href="#简述同步与异步的区别" class="headerlink" title="简述同步与异步的区别"></a>简述同步与异步的区别</h4><ul>
 <li><p>同步：</p>
 <ul>
 <li>浏览器访问服务器请求，用户看得到页面刷新，重新发请求,等请求完，页面刷新，新内容出现，用户看到新内容,进行下一步操作</li>
@@ -863,7 +863,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="深拷贝浅拷贝"><a href="#深拷贝浅拷贝" class="headerlink" title="深拷贝浅拷贝"></a>深拷贝浅拷贝</h2><ul>
+<h4 id="深拷贝浅拷贝"><a href="#深拷贝浅拷贝" class="headerlink" title="深拷贝浅拷贝"></a>深拷贝浅拷贝</h4><ul>
 <li><p>浅拷贝：浅拷贝会直接复制引用类型的地址值，新旧对象的地址值一样 都指向同一块内存空间(共享) 所以对新对象的操作会影响到旧对象</p>
 </li>
 <li><p>深拷贝：深拷贝是复制了对象本身，新旧对象有自己独立的内存空间 所以对新对象的操作不会影响到旧对象</p>
@@ -873,24 +873,25 @@
 <li><p>可以实现深拷贝的方法：对象只有一层的时候使用Object.assign()，json.stringify和json.parse，直接使用Object.create()方法</p>
 </li>
 </ul>
-<h2 id="解释-JavaScript-中“undefined”和“not-defined”之间的区别"><a href="#解释-JavaScript-中“undefined”和“not-defined”之间的区别" class="headerlink" title="解释 JavaScript 中“undefined”和“not defined”之间的区别"></a>解释 JavaScript 中“undefined”和“not defined”之间的区别</h2><ul>
+<h4 id="解释-JavaScript-中“undefined”和“not-defined”之间的区别"><a href="#解释-JavaScript-中“undefined”和“not-defined”之间的区别" class="headerlink" title="解释 JavaScript 中“undefined”和“not defined”之间的区别"></a>解释 JavaScript 中“undefined”和“not defined”之间的区别</h4><ul>
 <li><p>当我们访问一个被声明但未被定义的变量时，会出现 undefined 错误。</p>
 </li>
 <li><p>当我们引用一个既未声明也未定义的变量时，将会出现 not defined 错误。</p>
 </li>
 </ul>
-<h2 id="匿名和命名函数有什么区别？"><a href="#匿名和命名函数有什么区别？" class="headerlink" title="匿名和命名函数有什么区别？"></a>匿名和命名函数有什么区别？</h2><ul>
+<h4 id="匿名和命名函数有什么区别？"><a href="#匿名和命名函数有什么区别？" class="headerlink" title="匿名和命名函数有什么区别？"></a>匿名和命名函数有什么区别？</h4><ul>
 <li><strong>函数名</strong>：匿名函数没有指定函数名，而命名函数有指定函数名</li>
 <li><strong>调用方式</strong>：匿名函数不能直接调用，需要赋值给一个变量或者作为参数传递给其他函数，而命名函数可以直接通过函数名调用</li>
 <li><strong>作用域</strong>：匿名函数可以创建一个独立的作用域，避免变量污染，而命名函数会在全局作用域或者所在的作用域中创建一个变量</li>
 </ul>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匿名函数</span></span><br><span class="line"><span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;这是一个匿名函数&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 命名函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;这是一个命名函数&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="json和jsonp的区别"><a href="#json和jsonp的区别" class="headerlink" title="json和jsonp的区别?"></a>json和jsonp的区别?</h2><ul>
+<p>json和jsonp的区别?</p>
+<ul>
 <li>json返回的是一串json格式数据；而jsonp返回的是脚本代码（包含一个函数调用）</li>
 <li>jsonp的全名叫做json with padding，就是把json对象用符合js语法的形式包裹起来以使其他的网站可以请求到，也就是将json封装成js文件传过去。</li>
 </ul>
-<h2 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h2><ul>
+<h4 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h4><ul>
 <li>在函数中，指向调用者</li>
 </ul>
 <ul>
@@ -898,7 +899,7 @@
 <li>在箭头函数中，上一层作用域的this指向</li>
 <li>如果有new关键字this指向new出来的那个对象</li>
 </ul>
-<h2 id="cookie，sessionStoreage和localStorage"><a href="#cookie，sessionStoreage和localStorage" class="headerlink" title="cookie，sessionStoreage和localStorage"></a>cookie，sessionStoreage和localStorage</h2><ul>
+<h4 id="cookie，sessionStoreage和localStorage"><a href="#cookie，sessionStoreage和localStorage" class="headerlink" title="cookie，sessionStoreage和localStorage"></a>cookie，sessionStoreage和localStorage</h4><ul>
 <li>都用在客户端存储数据，每一个都有自己的存储和到期限制，</li>
 <li>不同点：<ul>
 <li><ul>
@@ -923,9 +924,9 @@
 </ul>
 </li>
 </ul>
-<h2 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h2><p>防抖：所有的触发都会被取消，最后一次执行在规定的时间后才会触发，也就是说，连续快速的触发多次，只有最后一次执行</p>
+<h4 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h4><p>防抖：所有的触发都会被取消，最后一次执行在规定的时间后才会触发，也就是说，连续快速的触发多次，只有最后一次执行</p>
 <p>节流：在规定的时候内不会重新触发回调，只有大于时间间隔才会触发回调，减少事件触发的频率</p>
-<h2 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h2><ul>
+<h4 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h4><ul>
 <li><p>当事件发生在DOM元素上时，该事件并不完全发生在那个元素上。</p>
 </li>
 <li><p>事件传播有三个阶段：</p>
@@ -936,13 +937,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h2><ul>
+<h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><ul>
 <li>在捕获阶段，事件从 window 开始，一直到触发事件的元素。<code>window----&gt; document----&gt; html----&gt; body \----&gt;目标元素</code></li>
 </ul>
-<h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><ul>
+<h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><ul>
 <li>事件冒泡刚好与事件捕获相反，当前元素—-&gt;body -—&gt; html—-&gt;document -—&gt;window。在冒泡阶段，事件冒泡，或者事件发生在它的父代，祖父母，祖父母的父代，直到到达 window 为止。</li>
 </ul>
-<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><ul>
+<h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><ul>
 <li>事件委托是利用事件冒泡机制，在父元素上监听子元素的事件。通过将事件处理函数绑定到父元素上，可以实现对动态添加的子元素也能够触发相同的事件处理逻辑。当事件冒泡到父元素时，可以通过判断事件的目标元素（<code>event.target</code>）来确定具体是哪个子元素触发了事件。</li>
 <li>优点：<ul>
 <li>节省内存，避免了每个子元素都能绑定事件处理函数</li>
@@ -951,22 +952,22 @@
 </li>
 <li>综上所述，事件传播是指在DOM结构中的传递过程，包括事件捕获阶段、目标阶段和事件冒泡阶段，事件委托是一种利用事件冒泡机制，在父元素上监听子元素事件的技术</li>
 </ul>
-<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><ul>
+<h4 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h4><ul>
 <li>递归调用：函数在其自身内部调用自身。<ul>
 <li>在递归过程中，函数会反复调用自身，每次调用时都会解决一个规模较小的子问题，直到达到某个终止条件，然后逐层返回结果，最终得到整个问题的解。</li>
 </ul>
 </li>
 <li>终止条件：确定递归何时结束的条件，以避免无限递归。</li>
 </ul>
-<h2 id="回流和重绘"><a href="#回流和重绘" class="headerlink" title="回流和重绘"></a>回流和重绘</h2><ul>
+<h4 id="回流和重绘"><a href="#回流和重绘" class="headerlink" title="回流和重绘"></a>回流和重绘</h4><ul>
 <li>回流：当渲染树中的一部分或全部，因为元素的规模尺寸，布局，隐藏等改变而需要重新构建，这就称为回流</li>
 <li>重绘：当渲染树中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，则称为重绘</li>
 <li>两者的区别：回流必将引起重绘，而重绘不一定引起回流，比如：只有颜色改变的时候就只会发生重绘而不会引起回流，当页面布局和几何属性改变时就需要回流</li>
 </ul>
-<h2 id="ES6声明变量的六种方法"><a href="#ES6声明变量的六种方法" class="headerlink" title="ES6声明变量的六种方法"></a>ES6声明变量的六种方法</h2><ul>
+<h4 id="ES6声明变量的六种方法"><a href="#ES6声明变量的六种方法" class="headerlink" title="ES6声明变量的六种方法"></a>ES6声明变量的六种方法</h4><ul>
 <li>var，function，let，const，import，class</li>
 </ul>
-<h2 id="let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？"><a href="#let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？" class="headerlink" title="let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？"></a>let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？</h2><ul>
+<h4 id="let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？"><a href="#let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？" class="headerlink" title="let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？"></a>let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？</h4><ul>
 <li><p>var：预解析 变量提升 只提升变量名 不提升赋值，产生作用域</p>
 </li>
 <li><p>let 定义的变量不进行预解析，不进行变量提升，产生块级作用域{}</p>
@@ -981,12 +982,12 @@
 <li><p>变量提升：先声明变量，再进行赋值</p>
 </li>
 </ul>
-<h2 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h2><ul>
+<h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><ul>
 <li> 使用反引号创建的字符串就是模板字符串 ``</li>
 <li>模板字符串中的内容允许直接换行</li>
 <li>解决了字符串和变量之间使用+拼接的繁琐工作，可以直接使用${}来识别变量</li>
 </ul>
-<h2 id="Object-assign-有什么作用"><a href="#Object-assign-有什么作用" class="headerlink" title="Object.assign()有什么作用"></a>Object.assign()有什么作用</h2><ul>
+<h4 id="Object-assign-有什么作用"><a href="#Object-assign-有什么作用" class="headerlink" title="Object.assign()有什么作用"></a>Object.assign()有什么作用</h4><ul>
 <li><code>Object.assign()</code> 方法用于将一个或多个源对象的可枚举属性复制到目标对象。它返回目标对象。</li>
 </ul>
 <p>​    语法：<code>Object.assign(target, ...sources)</code></p>
@@ -994,9 +995,9 @@
 <li><code>target</code>：目标对象。</li>
 <li><code>sources</code>：一个或多个源对象。</li>
 </ul>
-<h2 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h2><p>class 类的使用</p>
+<h4 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h4><p>class 类的使用</p>
 <p>​    类理解成一个对象，class可以理解成是一个创建类的语法糖，他里面的绝大部分功能，在ES5都可以实现，只不过通过class创建会让语法更加的简单清晰，更像面向对象编程</p>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><ul>
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><ul>
 <li>普通函数表达式的简化语法</li>
 <li>省略function关键字，在()和{}之间使用一个箭头连接</li>
 <li>形参有且只有一个的时候，()也可以省略不写</li>
@@ -1005,7 +1006,7 @@
 <li>没有arguments实参的集合</li>
 <li>因为为没有自己的this，所以不能作为构造函数使用</li>
 </ul>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>在ES6中允许按照一定的模式从数组或者对象中提取想要的数据</p>
+<h4 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h4><p>在ES6中允许按照一定的模式从数组或者对象中提取想要的数据</p>
 <p>​     左右两边的结构必须保持一致</p>
 <p>​     声明和赋值不能分开</p>
 <p>​    将繁琐的数据进行简单化处理</p>
@@ -1013,7 +1014,7 @@
 
 
 
-<h2 id="扩展运算符（…）"><a href="#扩展运算符（…）" class="headerlink" title="扩展运算符（…）"></a>扩展运算符（…）</h2><p>…(剩余运算符)的作用</p>
+<h4 id="扩展运算符（…）"><a href="#扩展运算符（…）" class="headerlink" title="扩展运算符（…）"></a>扩展运算符（…）</h4><p>…(剩余运算符)的作用</p>
 <p>分配不了的都给它</p>
 <p>当剩余运算符在函数的形参中使用时，只允许出现在最后一个形参前面，表示剩下所有传递的实参都保存在这个参数中，以数组形式展示</p>
 <p>剩余运算符还可以作为展开数组的作用来使用，这时我们一般称之为开展运算符，或者扩展运算符，可以利用这种语法实现</p>
@@ -1021,13 +1022,13 @@
 <p>当我们需要将一个数组的每一个项作为实参的每一个值传递时，最简单的方式就是使用扩展运算符</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="comment">// 使用扩展运算符合并</span></span><br><span class="line"><span class="keyword">var</span> arr4 = [...arr1,...arr2]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr4) <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用扩展运算符找数组中最大值</span></span><br><span class="line"><span class="keyword">var</span> arr7 = [<span class="number">13</span>,<span class="number">21</span>,<span class="number">3</span>,<span class="number">3124</span>,<span class="number">32</span>,<span class="number">4532</span>,<span class="number">5</span>] </span><br><span class="line"><span class="keyword">let</span> maxNum = <span class="title class_">Math</span>.<span class="title function_">max</span>(...arr7)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(maxNum) <span class="comment">// 4532</span></span><br></pre></td></tr></table></figure></div>
 
-<h2 id="Set和Map区别"><a href="#Set和Map区别" class="headerlink" title="Set和Map区别"></a>Set和Map区别</h2><ul>
+<h4 id="Set和Map区别"><a href="#Set和Map区别" class="headerlink" title="Set和Map区别"></a>Set和Map区别</h4><ul>
 <li>（1）Map是键值对的集合，类似于对象，Set是值的集合，类似于数组，<strong>当然键和值可以是任何的值</strong>；</li>
 <li>（2）Map可以通过get方法获取值，而set不能因为它只有值；</li>
 <li>（3）都能通过迭代器进行for…of遍历；</li>
 <li>（4）Set的值是唯一的可以做数组去重，Map由于没有格式限制，可以做数据存储</li>
 </ul>
-<h2 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h2><ul>
+<h4 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h4><ul>
 <li>ES6引入一个全新的数据类型 Symbol该类型表示独一无二的值，类型的展现方式类似于字符串<ul>
 <li>1） Symbol值是唯一的，那么可以解决命名冲突问题</li>
 <li>2） Symbol值不能和其他任何数据进行计算</li>
@@ -1037,8 +1038,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="Proxy是什么，有什么作用"><a href="#Proxy是什么，有什么作用" class="headerlink" title="Proxy是什么，有什么作用"></a>Proxy是什么，有什么作用</h2><p>Proxy用于创建一个对象的代理，从而实现基本操作的拦截和自定义（属性查找，赋值，函数调用等），Proxy有两个参数分别是target和handler，target是代理的原始对象，handler是一个定义哪些操作将被拦截以及如何重新定义拦截操作的对象</p>
-<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><ul>
+<h4 id="Proxy是什么，有什么作用"><a href="#Proxy是什么，有什么作用" class="headerlink" title="Proxy是什么，有什么作用"></a>Proxy是什么，有什么作用</h4><p>Proxy用于创建一个对象的代理，从而实现基本操作的拦截和自定义（属性查找，赋值，函数调用等），Proxy有两个参数分别是target和handler，target是代理的原始对象，handler是一个定义哪些操作将被拦截以及如何重新定义拦截操作的对象</p>
+<h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><ul>
 <li><p>Promise是ES6引入的异步编程的新解决方案，语法上Promise类似于一个构造函数，用来封装异步操作并可以获取成功或者失败的结果，专门用来解决回调地狱问题</p>
 </li>
 <li><p>在这个Promise的参数中传递的是一个回调函数，用来监听异步的结果，在这个回调函数中有两个参数，分贝时resolve和reject，这两个参数都是一个函数，分别代表成功和失败的回调参数，这两个参数调用时，都会返回到Promise调用一个Promise实例，该实例上有两个方法，分别是 then 和 catch，then方法对应的是resolve返回的实例，catch方法对应的是reject返回的实例</p>
@@ -1062,11 +1063,11 @@
 </ul>
 </li>
 </ul>
-<h2 id="async和await是什么"><a href="#async和await是什么" class="headerlink" title="async和await是什么"></a>async和await是什么</h2><ul>
+<h4 id="async和await是什么"><a href="#async和await是什么" class="headerlink" title="async和await是什么"></a>async和await是什么</h4><ul>
 <li>async和await是新的一种处理异步操作的语法糖，它提供了一种更简介、更直观的方式来编写异步代码，并使异步操作的流程控制更类似于同步代码</li>
 <li>async和await是建立在Promise的基础上的，它可以用于异步函数中，将函数标记为异步并允许在函数内部使用await关键字来等待promise对象的解决</li>
 </ul>
-<h2 id="async-await相比于Promise的优势？"><a href="#async-await相比于Promise的优势？" class="headerlink" title="async/await相比于Promise的优势？"></a>async/await相比于Promise的优势？</h2><ul>
+<h4 id="async-await相比于Promise的优势？"><a href="#async-await相比于Promise的优势？" class="headerlink" title="async/await相比于Promise的优势？"></a>async/await相比于Promise的优势？</h4><ul>
 <li>优势<ul>
 <li>更类似于同步代码写法</li>
 <li>可以使用try和catch语句来处理</li>
@@ -1074,7 +1075,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="同步与异步的区别"><a href="#同步与异步的区别" class="headerlink" title="同步与异步的区别"></a>同步与异步的区别</h2><p>同步：任务按照顺序执行，每个任务必须等待前一个任务完成之后才能开始执行，每个任务都会阻塞后续代码的执行，直到当前任务完成。</p>
+<h4 id="同步与异步的区别"><a href="#同步与异步的区别" class="headerlink" title="同步与异步的区别"></a>同步与异步的区别</h4><p>同步：任务按照顺序执行，每个任务必须等待前一个任务完成之后才能开始执行，每个任务都会阻塞后续代码的执行，直到当前任务完成。</p>
 <p>异步：任务可以同时进行，不需要等待前一个任务完成。当一个异步任务开始执行后，程序不会等待其完成，而是立即转而执行后续的代码。</p>
 
             </div>
@@ -1088,7 +1089,7 @@
         <li><strong>创建于:</strong> 2023-06-26 00:00:00</li>
         
             <li>
-                <strong>更新于:</strong> 2023-06-30 11:09:13
+                <strong>更新于:</strong> 2023-06-30 11:15:36
             </li>
         
         <li>
@@ -1191,7 +1192,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">面试题总结</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-amp-amp-ES6"><span class="nav-number">1.</span> <span class="nav-text">JavaScript&amp;&amp;ES6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE"><span class="nav-number">1.1.</span> <span class="nav-text">js的作用域和作用域链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">js创建对象的几种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E5%92%8C%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.</span> <span class="nav-text">箭头函数和普通函数的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">js实现继承的几种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call%E3%80%81apply%E3%80%81bind%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.5.</span> <span class="nav-text">call、apply、bind的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8BJS%E5%8E%9F%E7%94%9F%E5%B8%B8%E7%94%A8dom%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="nav-number">1.6.</span> <span class="nav-text">说一下JS原生常用dom操作方法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFJavaScript%E5%8E%9F%E5%9E%8B%EF%BC%8C%E5%8E%9F%E5%9E%8B%E9%93%BE-%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="nav-number">1.7.</span> <span class="nav-text">什么是JavaScript原型，原型链 ? 有什么特点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-%E5%AE%9E%E4%BE%8B%E5%AF%B9%E8%B1%A1-%E5%8E%9F%E5%9E%8B%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.8.</span> <span class="nav-text">构造函数 实例对象 原型三者之间的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-number">1.9.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.10.</span> <span class="nav-text">js作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.11.</span> <span class="nav-text">数组方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="nav-number">1.12.</span> <span class="nav-text">字符串方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%A8%E5%9F%9F"><span class="nav-number">1.13.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsonp%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">1.14.</span> <span class="nav-text">jsonp的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAajax"><span class="nav-number">1.15.</span> <span class="nav-text">如何创建一个ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ajax%E7%9A%84%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%E6%88%96%E8%80%85axios%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.16.</span> <span class="nav-text">ajax的通信原理是什么或者axios的原理是什么?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.17.</span> <span class="nav-text">arguments对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2"><span class="nav-number">1.18.</span> <span class="nav-text">内存泄露</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">1.19.</span> <span class="nav-text">ES6新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%90%86%E8%A7%A3"><span class="nav-number">1.20.</span> <span class="nav-text">面向对象理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%AE%8C%E4%B8%AD%E9%97%B4%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88"><span class="nav-number">1.21.</span> <span class="nav-text">从输入URL到页面加载完中间发生了什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6%E6%A8%A1%E5%9D%97%E4%B8%8ECommonJS%E6%A8%A1%E5%9D%97%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">1.22.</span> <span class="nav-text">ES6模块与CommonJS模块有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM%E5%92%8CBOM"><span class="nav-number">1.23.</span> <span class="nav-text">DOM和BOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E8%BF%B0%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.24.</span> <span class="nav-text">简述同步与异步的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="nav-number">1.25.</span> <span class="nav-text">深拷贝浅拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A-JavaScript-%E4%B8%AD%E2%80%9Cundefined%E2%80%9D%E5%92%8C%E2%80%9Cnot-defined%E2%80%9D%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.26.</span> <span class="nav-text">解释 JavaScript 中“undefined”和“not defined”之间的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E5%92%8C%E5%91%BD%E5%90%8D%E5%87%BD%E6%95%B0%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">1.27.</span> <span class="nav-text">匿名和命名函数有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#json%E5%92%8Cjsonp%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.28.</span> <span class="nav-text">json和jsonp的区别?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this%E6%8C%87%E5%90%91"><span class="nav-number">1.29.</span> <span class="nav-text">this指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie%EF%BC%8CsessionStoreage%E5%92%8ClocalStorage"><span class="nav-number">1.30.</span> <span class="nav-text">cookie，sessionStoreage和localStorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81"><span class="nav-number">1.31.</span> <span class="nav-text">防抖和节流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD"><span class="nav-number">1.32.</span> <span class="nav-text">事件传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7"><span class="nav-number">1.33.</span> <span class="nav-text">事件捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="nav-number">1.34.</span> <span class="nav-text">事件冒泡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="nav-number">1.35.</span> <span class="nav-text">事件委托</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-number">1.36.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%B5%81%E5%92%8C%E9%87%8D%E7%BB%98"><span class="nav-number">1.37.</span> <span class="nav-text">回流和重绘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%AD%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="nav-number">1.38.</span> <span class="nav-text">ES6声明变量的六种方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#let%E4%B8%8Econst%E4%BB%A5%E5%8F%8Avar%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F%E4%BB%A5%E5%8F%8A%E4%BB%80%E4%B9%88%E6%98%AF%E6%9A%82%E6%97%B6%E6%80%A7%E6%AD%BB%E5%8C%BA%EF%BC%9F%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%EF%BC%9F"><span class="nav-number">1.39.</span> <span class="nav-text">let与const以及var的区别？以及什么是暂时性死区？什么是变量提升？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.40.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-assign-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="nav-number">1.41.</span> <span class="nav-text">Object.assign()有什么作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#class%E7%B1%BB"><span class="nav-number">1.42.</span> <span class="nav-text">class类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="nav-number">1.43.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="nav-number">1.44.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88%E2%80%A6%EF%BC%89"><span class="nav-number">1.45.</span> <span class="nav-text">扩展运算符（…）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E5%92%8CMap%E5%8C%BA%E5%88%AB"><span class="nav-number">1.46.</span> <span class="nav-text">Set和Map区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol"><span class="nav-number">1.47.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proxy%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="nav-number">1.48.</span> <span class="nav-text">Proxy是什么，有什么作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">1.49.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#async%E5%92%8Cawait%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.50.</span> <span class="nav-text">async和await是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#async-await%E7%9B%B8%E6%AF%94%E4%BA%8EPromise%E7%9A%84%E4%BC%98%E5%8A%BF%EF%BC%9F"><span class="nav-number">1.51.</span> <span class="nav-text">async&#x2F;await相比于Promise的优势？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.52.</span> <span class="nav-text">同步与异步的区别</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-amp-amp-ES6"><span class="nav-number">1.</span> <span class="nav-text">JavaScript&amp;&amp;ES6</span></a></li></ol>
 
     </div>
 </div>
