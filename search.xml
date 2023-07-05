@@ -66,15 +66,12 @@
 <li><strong>constructor</strong>：是一个属性，返回一个值的构造函数的引用，例如<code>(123).constructor === Number</code>返回<code>true</code>。</li>
 <li>Object.prototype.toString.call()：是一个方法，返回一个值的内部属性，例如<code>Object.prototype.toString.call(&quot;123&quot;)</code>返回<code>&quot;[object String]&quot;</code>。</li>
 </ul>
-<h3 id="null-和-undefined-的区别"><a href="#null-和-undefined-的区别" class="headerlink" title="null 和 undefined 的区别"></a>null 和 undefined 的区别</h3><p>null 和 undefined 都是表示缺少或无效的值，但它们有以下几个区别：</p>
-<ul>
+<h3 id="null-和-undefined-的区别"><a href="#null-和-undefined-的区别" class="headerlink" title="null 和 undefined 的区别"></a>null 和 undefined 的区别</h3><ul>
 <li>null 是一个字面量，表示一个空对象的引用，而 undefined 是一个全局变量，表示一个未初始化的值</li>
 <li>null 是一个对象类型，而 undefined 是一个未定义类型</li>
-<li>null 在布尔运算中被认为是 false，而 undefined 也被认为是 false</li>
 <li>null 在数字运算中被转换为 0，而 undefined 被转换为 NaN</li>
 <li>null 和 undefined 在相等运算符（==）下相等，但在全等运算符（===）下不相等</li>
-<li>null 是对象原型链的终点，而 undefined 不是</li>
-<li>JSON.stringify 会将值为 undefined 的属性删除，而不会删除值为 null 的属性</li>
+<li>null 是对象原型链的终点</li>
 </ul>
 <h3 id="js的作用域和作用域链"><a href="#js的作用域和作用域链" class="headerlink" title="js的作用域和作用域链"></a>js的作用域和作用域链</h3><p>JavaScript 的作用域是指代码中定义变量的区域，它决定了变量的可见性和生命周期。JS作用域主要包括全局作用域、局部作用域和ES6的块级作用域</p>
 <ul>
@@ -95,7 +92,7 @@
 </li>
 <li><p>原型模式：使用一个对象作为另一个对象的原型，然后用 Object.create() 方法创建一个新对象，这样可以实现继承和共享属性和方法</p>
 </li>
-<li><p>组合使用构造函数模式和原型模式：使用构造函数模式和原型模式的组合，构造函数用于定义实例属性，原型用于定义共享的属性和方法。</p>
+<li><p>组合使用构造函数模式和原型模式：使用构造函数模式和原型模式的组合，构造函数用于定义实例属性，原型用于定义共享的属性和方法。 </p>
 <p>* 不成文的规定</p>
 <p>如果函数名以大写字母开头 我们认为它是一个构造函数 配合new关键字使用</p>
 <p>如果函数名是小写字母开头 我们认为它是一个普通函数 直接调用即可</p>
@@ -578,10 +575,48 @@
 <p>303    查看其他地址</p>
 <p>400    错误请求</p>
 <p>401    请求要求用户的身份认证</p>
-<p>403    服拒绝请求</p>
+<p>403    拒绝请求</p>
 <p>404    未找到</p>
 <p>500    服务器内部错误，无法完成请求</p>
 <p>503    服务器暂时不可用</p>
+<h3 id="px、em、rem、vh、vw分别是什么"><a href="#px、em、rem、vh、vw分别是什么" class="headerlink" title="px、em、rem、vh、vw分别是什么"></a>px、em、rem、vh、vw分别是什么</h3><p>px：绝对长度单位，不会随着浏览器页面大小改变</p>
+<p>em：相对长度单位，继承父元素的font-size，比如某个元素字体大小为16px，那么1em就等于16px</p>
+<p>rem：相对长度单位，rem是相对于HTML根元素的字体大小来计算长度单位，</p>
+<p>vh：表示视窗的高度的百分比，1vh表示视窗高度的1%</p>
+<p>vw：表示视窗的宽度，1vw就表示视窗宽度的1%</p>
+<h3 id="vue路由传参的方式有哪些？如何接受传递的"><a href="#vue路由传参的方式有哪些？如何接受传递的" class="headerlink" title="vue路由传参的方式有哪些？如何接受传递的"></a>vue路由传参的方式有哪些？如何接受传递的</h3><ul>
+<li>params 传参和 query 传参<ul>
+<li>静态路由通过 params 传参，页面一旦刷新则数据会丢失 动态路由刷新不会丢失数据 而 query 传参 刷新页面不会丢失数据</li>
+<li>params 传参类似于 post 请求传参，参数不会出现在 url 地址中，可以使用<code>this.$route.params.id</code>来接收参数</li>
+<li>query 传参类似于 get 传参，数据会以查询字符串形式暴露在 url 地址栏中，可以使用<code>this.$route.query.id</code>来接收参数</li>
+</ul>
+</li>
+</ul>
+<h3 id="说说vuex的工作流程"><a href="#说说vuex的工作流程" class="headerlink" title="说说vuex的工作流程"></a>说说vuex的工作流程</h3><ul>
+<li>在组件中通过dispatch调用actions中的方法，在actions的方法中通过commit调用mutations中的方法，在mutations中借助于mutate来修改state中的数据，在state中的数据可以通过rander函数在组件中进行响应式渲染</li>
+</ul>
+<h3 id="Vuex的五大核心"><a href="#Vuex的五大核心" class="headerlink" title="Vuex的五大核心"></a>Vuex的五大核心</h3><ul>
+<li>state：存放共用数据</li>
+<li>mutations：唯一可以修改state状态的地方，也是可以保存所有同步方法的地方</li>
+<li>actions：用来使用mutations，修改state中的数据</li>
+<li>getters：获取state里的数据，如果需要对数据进行计算可以使用</li>
+<li>models：Vuex模块化管理，也可以用来写数据，模块中的state允许有重名数据出现，但是mutations及actions中不允许有重名的方法名出现</li>
+</ul>
+<h3 id="为什么v-if和v-for不建议用在同一标签"><a href="#为什么v-if和v-for不建议用在同一标签" class="headerlink" title="为什么v-if和v-for不建议用在同一标签"></a>为什么v-if和v-for不建议用在同一标签</h3><ul>
+<li>1、性能损耗：v-for的优先级比v-if高，每次渲染都会先循环再进行条件判断</li>
+<li>2、渲染结果：v-if会影响v-for的循环次数，导致列表渲染出错</li>
+</ul>
+<h3 id="什么是虚拟DOM，使用虚拟DOM的好处是"><a href="#什么是虚拟DOM，使用虚拟DOM的好处是" class="headerlink" title="什么是虚拟DOM，使用虚拟DOM的好处是?"></a>什么是虚拟DOM，使用虚拟DOM的好处是?</h3><ul>
+<li>通过js创建一个Object对象来模拟真实DOM结构，这个对象包含标签名(tag)、属性(attrs)、和子元素对象(children)三个属性，通过vue中的render()函数把虚拟DOM编译成真实DOM，再通过appendChild()添加到页面中，Vue中的虚拟DOM最大的优势就是diff算法。减少JavaScript操作真实DOM带来的性能消耗</li>
+</ul>
+<h3 id="常见的Vue指令有哪些"><a href="#常见的Vue指令有哪些" class="headerlink" title="常见的Vue指令有哪些"></a>常见的Vue指令有哪些</h3><p>v-once：只会初始渲染一次数据，渲染完之后，该标签里面的数据不再进行响应式改变<br>v-html：可以解析数据中的HTML代码<br>v-text：不会解析HTMl代码，该标签内原有的内容会被替换掉<br>v-pre：不对具有v-pre属性的标签内容做解析<br>v-cloak：解决浏览器刷新时页面插值闪烁问题<br>v-bind：动态修改标签的属性<br>v-if：添加或删除元素，如果值为true 则表示添加元素 false表示删除<br>v-show：控制元素的显示与隐藏，<br>v-on：绑定事件 可以简写成@ 绑定的方法在methods中<br>v-for：列表渲染指令<br>  数据的类型：<br>  Array  数组<br>  Object 对象<br>  String 字符串<br>  Number 数字(必须是一个自然数，表示数组的长度)</p>
+<h3 id="v-model原理是什么"><a href="#v-model原理是什么" class="headerlink" title="v-model原理是什么"></a>v-model原理是什么</h3><p>通过v-bind绑定输入框的value值实现数据改变输入框内容跟着改变，再通过v-on监听输入框的input事件，在事件函数中获取输入框的value来改变数据，从而达到双向绑定的实现，v-model就是这种实现的一个语法糖</p>
+<h3 id="父传子数据"><a href="#父传子数据" class="headerlink" title="父传子数据"></a>父传子数据</h3><p>在父组件的子组件标签上自定义一个属性，属性值就是给子组件传递的数据</p>
+<p>在子组件通过props属性来接收父组件传递过来的数据</p>
+<p>在子组件内就可以使用传递的数据</p>
+<h3 id="子传父数据"><a href="#子传父数据" class="headerlink" title="子传父数据"></a>子传父数据</h3><p>1、在子组件的事件函数中通过this.$emit()方法，向父组件发出一个自定义事件，同时携带数据<br>2、在父组件的子组件标签上通过v-on监听子组件发出的自定义事件，绑定一个事件触发函数<br>3、在父组件的事件触发函数中可以接收到一个参数，该参数就是子组件传递过来的数据</p>
+<h3 id="vue中生命周期函数有哪些"><a href="#vue中生命周期函数有哪些" class="headerlink" title="vue中生命周期函数有哪些"></a>vue中生命周期函数有哪些</h3><p>Vue生命周期分为4个大的阶段<br>初始化、挂载、更新、销毁 触发八个生命周期函数<br>beforeCreate ：  初始化前<br>  vue实例开始准备加载data/methods….<br>created : 初始化后<br>  vue已经加载完data/methods….<br>  进行网络请求，拿到页面数据<br>beforeMount ： 挂载前<br>  将vue实例挂载到某个DOM元素前<br>mounted ： 挂载后<br>   将vue实例挂载某个DOM元素完成,这时才可以对DOM进行操作<br>beforeUpdate ： 更新前<br>updated ： 更新后<br>beforeDestroy ： 销毁前<br>destroyed ： 销毁后</p>
+<h3 id="路由的导航守卫"><a href="#路由的导航守卫" class="headerlink" title="路由的导航守卫"></a>路由的导航守卫</h3><p>全局前置守卫 router.beforeEach()<br>全局后置守卫 router.afterEach()<br>全局解析守卫 router.beforeResolve()<br>路由独享守卫 beforeEnter:(to,from,next)=&gt;{}<br>beforeRouteEnter:()=&gt;{} 对访问用户进行权限校验<br>beforeRouteUpdate:()=&gt;{} 一般在动态路由的路径发生改变时，需要执行的操作<br>beforeRouterLeave:()=&gt;{} 通常情况下是为了预防用户还未保存前离开</p>
 ]]></content>
       <categories>
         <category>javascript</category>
