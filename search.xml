@@ -110,6 +110,10 @@
 
 <p>组合继承：组合继承是结合第一种和第二种方式</p>
 <p>ES6继承：用class定义类，用extends继承类，用super()表示<br>父类</p>
+<h3 id="new操作符具体干了什么"><a href="#new操作符具体干了什么" class="headerlink" title="new操作符具体干了什么"></a>new操作符具体干了什么</h3><p>创建一个空对象，作为新创建的实例对象</p>
+<p>将这个空对象原型，指向构造函数的原型，实现原型链继承</p>
+<p>将构造函数的this指向这个空对象，调用构造函数，给对象添加属性和方法</p>
+<p>返回这个对象，如果构造函数没有返回其他对象或函数，则默认返回这个对象。</p>
 <h3 id="call、apply、bind的区别"><a href="#call、apply、bind的区别" class="headerlink" title="call、apply、bind的区别"></a>call、apply、bind的区别</h3><ul>
 <li>第一个参数都是this要指向的对象，如果没有这个参数或参数为undefined或null，则默认指向全局window。</li>
 <li>三者都可以传参，但是apply是数组，而call是参数列表，且apply和call是一次性传入参数，而bind可以分为多次传入。</li>
@@ -118,28 +122,28 @@
 <h3 id="说一下JS原生常用dom操作方法？"><a href="#说一下JS原生常用dom操作方法？" class="headerlink" title="说一下JS原生常用dom操作方法？"></a>说一下JS原生常用dom操作方法？</h3><ul>
 <li><p>js原生dom操作方法有</p>
 <ul>
-<li>​    查找：<ul>
-<li>​        getElementByid,</li>
-<li>​        getElementsByTagName,</li>
-<li>​        querySelector,</li>
-<li>​        querySelectorAll</li>
+<li>查找：<ul>
+<li>getElementByid,</li>
+<li>getElementsByTagName,</li>
+<li>querySelector,</li>
+<li>querySelectorAll</li>
 </ul>
 </li>
-<li>​    插入：<ul>
-<li>​        appendChild,insertBefore</li>
+<li>插入：<ul>
+<li>appendChild,insertBefore</li>
 </ul>
 </li>
-<li>​    删除：<ul>
-<li>​        removeChild</li>
+<li>删除：<ul>
+<li>removeChild</li>
 </ul>
 </li>
-<li>​    克隆：<ul>
-<li>​        cloneNode</li>
+<li>克隆：<ul>
+<li>cloneNode</li>
 </ul>
 </li>
-<li>​    设置和获取属性：<ul>
-<li>​        setAttribute(“属性名”,”值”)</li>
-<li>​        getAttibute(“属性名”)</li>
+<li>设置和获取属性：<ul>
+<li>setAttribute(“属性名”,”值”)</li>
+<li>getAttibute(“属性名”)</li>
 </ul>
 </li>
 </ul>
@@ -258,6 +262,15 @@
 </ul>
 </li>
 </ul>
+<h3 id="数组方法-forEach-和-map-的区别"><a href="#数组方法-forEach-和-map-的区别" class="headerlink" title="数组方法 forEach 和 map 的区别 ?"></a>数组方法 forEach 和 map 的区别 ?</h3><ul>
+<li>forEach和map都是循环遍历数组中的每一项。forEach() 和 map() 里面每一次执行匿名函数都支持3个参数：数组中的当前项item,当前项的索引index,原始数组input。</li>
+<li>匿名函数中的this都是指Window。只能遍历数组。</li>
+<li>他们的区别是：forEach没有返回值，但map中要有返回值，返回处理后的所有新元素组成的数组。</li>
+</ul>
+<h3 id="在-JS-中如何阻止事件冒泡"><a href="#在-JS-中如何阻止事件冒泡" class="headerlink" title="在 JS 中如何阻止事件冒泡 ?"></a>在 JS 中如何阻止事件冒泡 ?</h3><p>使用event.stopPropagation()阻止事件冒泡</p>
+<p>事件捕获addEventListener的第三个参数为true</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用捕获阶段处理事件，不触发冒泡 element.addEventListener(&#x27;click&#x27;, handleClick, true)</span></span><br></pre></td></tr></table></figure></div>
+
 <h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域 **"></a>跨域 **</h3><ul>
 <li>什么时候跨域? 介绍同源策略<ul>
 <li>什么时候跨域：协议，域名，端口号有一个不一致就会跨域</li>
@@ -339,6 +352,11 @@
 <h3 id="从输入URL到页面加载完中间发生了什么"><a href="#从输入URL到页面加载完中间发生了什么" class="headerlink" title="从输入URL到页面加载完中间发生了什么 **"></a>从输入URL到页面加载完中间发生了什么 **</h3><ul>
 <li>输入完URL通过DNS解析找到这个地址对应的服务器地址(ip),通过TCP请求链接服务,通过WEB服务器(apache)返回数据,浏览器根据返回数据构建DOM树,通过css渲染引擎及js解析引擎将页面渲染出来,关闭tcp连接</li>
 </ul>
+<h3 id="什么是三次握手和四次挥手"><a href="#什么是三次握手和四次挥手" class="headerlink" title="什么是三次握手和四次挥手 ?"></a>什么是三次握手和四次挥手 ?</h3><ul>
+<li>三次握手是网络客户端跟网络服务器之间建立连接，并进行通信的过程。相当于客户端和服务器之间</li>
+<li>你来我往的3个步骤。<br>第一次握手是建立连接，客户端发送连接请求报文，并传送规定的数据包；<br>第二次握手是服务器端表示接收到连接请求报文，并回传规定的数据包；<br>第三次握手是客户端接收到服务器回传的数据包后，给服务器端再次发送数据包。这样就完成了客户端跟服务器的连接和数据传送。</li>
+<li>四次挥手表示当前这次连接请求已经结束，要断开这次连接。<br>第一次挥手是客户端对服务器发起断开请求，<br>第二次握手是服务器表示收到这次断开请求，<br>第三次握手是服务器表示已经断开连接<br>第四次握手是客户端断开连接。</li>
+</ul>
 <h3 id="ES6模块与CommonJS模块有什么区别？"><a href="#ES6模块与CommonJS模块有什么区别？" class="headerlink" title="ES6模块与CommonJS模块有什么区别？"></a>ES6模块与CommonJS模块有什么区别？</h3><ul>
 <li>1、CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。CommonJS 模块输出的是值的，也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。ES6 模块的运行机制与 CommonJS 不一样。JS 引擎对脚本静态分析的时候，遇到模块加载命令 import，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。</li>
 <li>2、CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。CommonJS 模块就是对象，即在输入时是先加载整个模块，生成一个对象，然后再从这个对象上面读取方法，这种加载称为“运行时加载”。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成。</li>
@@ -407,8 +425,11 @@
 </ul>
 </li>
 </ul>
-<h3 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流 **"></a>防抖和节流 **</h3><p>防抖：所有的触发都会被取消，最后一次执行在规定的时间后才会触发，也就是说，连续快速的触发多次，只有最后一次执行                  </p>
-<p>节流：在规定的时候内不会重新触发回调，只有大于时间间隔才会触发回调，减少事件触发的频率</p>
+<h3 id="token-一般存放在哪里-为什么不存放在-cookie-内"><a href="#token-一般存放在哪里-为什么不存放在-cookie-内" class="headerlink" title="token 一般存放在哪里 ? 为什么不存放在 cookie 内 ?"></a>token 一般存放在哪里 ? 为什么不存放在 cookie 内 ?</h3><ul>
+<li>token一般放在本地存储中。token的存在本身只关心请求的安全性，而不关心token本身的安全，因为token是服务器端生成的，可以理解为一种加密技术。但如果存在cookie内的话，浏览器的请求默认会自动在请求头中携带cookie，所以容易受到csrf攻击。</li>
+</ul>
+<h3 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流 **"></a>防抖和节流 **</h3><p>防抖：在一定时间内，多次触发同一个事件，只执行最后一次操作     </p>
+<p>节流：在一定时间内，多次触发同一个事件，只执行第一次操作</p>
 <h3 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h3><ul>
 <li><p>当事件发生在DOM元素上时，该事件并不完全发生在那个元素上。</p>
 </li>
@@ -479,6 +500,15 @@
 <li><code>sources</code>：一个或多个源对象。</li>
 </ul>
 <h3 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h3><p>class类是JavaScript中用于创建对象的模板，它可以封装数据和方法，实现继承和多态。class类是在ES6中引入的，是ES5构造函数的语法糖。</p>
+<h3 id="你了解构造函数吗-class-是什么-两者有什么区别"><a href="#你了解构造函数吗-class-是什么-两者有什么区别" class="headerlink" title="你了解构造函数吗 ? class 是什么 ? 两者有什么区别 ?"></a>你了解构造函数吗 ? class 是什么 ? 两者有什么区别 ?</h3><p>在es5中构造函数其实就是在定义一个类，可以实例化对象，es6中class其实是构造函数的语法糖。</p>
+<ul>
+<li>在class内部和class的方法内部，默认使用严格模式</li>
+<li>class类不存在预解析，也就是不能先调用class生成实例，再定义class类，但是构造函数可以。</li>
+<li>class中定义的方法默认不能被枚举，也就是不能被遍历。</li>
+<li>class必须使用new执行，但是构造函数没有new也可以执行。</li>
+<li>class中的所有方法都没有原型，也就不能被new</li>
+<li>class中继承可以继承静态方法，但是构造函数的继承不能。</li>
+</ul>
 <h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><ul>
 <li>普通函数表达式的简化语法</li>
 <li>省略function关键字，在()和{}之间使用一个箭头连接</li>
@@ -512,9 +542,9 @@
 </ul>
 <h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><ul>
 <li>ES6引入一个全新的数据类型 Symbol该类型表示独一无二的值，类型的展现方式类似于字符串<ul>
-<li>1） Symbol值是唯一的，那么可以解决命名冲突问题</li>
-<li>2） Symbol值不能和其他任何数据进行计算</li>
-<li>3） Symbol定义的对象属性不能使用for in进行遍历 =，Reflect.ownkeys来获取所有的键名</li>
+<li>Symbol值是唯一的，那么可以解决命名冲突问题</li>
+<li>Symbol值不能和其他任何数据进行计算</li>
+<li> Symbol定义的对象属性不能使用for in进行遍历 =，Reflect.ownkeys来获取所有的键名</li>
 <li>Symbol()表示创建一个独一无二的值</li>
 <li>Symbol.for()表示创建一个独一无二的地址</li>
 </ul>
@@ -524,7 +554,7 @@
 <h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise **"></a>Promise **</h3><ul>
 <li><p>Promise是ES6引入的异步编程的新解决方案，语法上Promise类似于一个构造函数，用来封装异步操作并可以获取成功或者失败的结果，专门用来解决回调地狱问题</p>
 </li>
-<li><p>在这个Promise的参数中传递的是一个回调函数，用来监听异步的结果，在这个回调函数中有两个参数，分贝时resolve和reject，这两个参数都是一个函数，分别代表成功和失败的回调参数，这两个参数调用时，都会返回到Promise调用一个Promise实例，该实例上有两个方法，分别是 then 和 catch，then方法对应的是resolve返回的实例，catch方法对应的是reject返回的实例</p>
+<li><p>在这个Promise的参数中传递的是一个回调函数，用来监听异步的结果，在这个回调函数中有两个参数，分别是resolve和reject，这两个参数都是一个函数，分别代表成功和失败的回调参数，这两个参数调用时，都会返回到Promise调用一个Promise实例，该实例上有两个方法，分别是 then 和 catch，then方法对应的是resolve返回的实例，catch方法对应的是reject返回的实例</p>
 </li>
 <li><p>Promise.all()</p>
 <p>   作用：并行操作异步处理，当我们需要同时发起多个异步请求时而且需要对请求的结果做处理，这时我们就要考虑使用all方法</p>
@@ -594,12 +624,24 @@
 <h3 id="说说vuex的工作流程"><a href="#说说vuex的工作流程" class="headerlink" title="说说vuex的工作流程"></a>说说vuex的工作流程</h3><ul>
 <li>在组件中通过dispatch调用actions中的方法，在actions的方法中通过commit调用mutations中的方法，在mutations中借助于mutate来修改state中的数据，在state中的数据可以通过rander函数在组件中进行响应式渲染</li>
 </ul>
+<h3 id="mutations和actions的区别"><a href="#mutations和actions的区别" class="headerlink" title="mutations和actions的区别"></a>mutations和actions的区别</h3><ol>
+<li>mutations只能处理同步任务，actions可以处理同步和异步</li>
+<li>mutations方法中第一个参数是state对象，actions方法中第一个参数是store实例对象</li>
+<li>mutations方法在组件中使用commit调用，actions方法在组件中使用dispatch</li>
+<li>mutations方法在组件中无法使用then回调监听，actions方法在组件中可以使用then回调监听</li>
+</ol>
 <h3 id="Vuex的五大核心"><a href="#Vuex的五大核心" class="headerlink" title="Vuex的五大核心"></a>Vuex的五大核心</h3><ul>
 <li>state：存放共用数据</li>
 <li>mutations：唯一可以修改state状态的地方，也是可以保存所有同步方法的地方</li>
 <li>actions：用来使用mutations，修改state中的数据</li>
 <li>getters：获取state里的数据，如果需要对数据进行计算可以使用</li>
 <li>models：Vuex模块化管理，也可以用来写数据，模块中的state允许有重名数据出现，但是mutations及actions中不允许有重名的方法名出现</li>
+</ul>
+<h3 id="Vuex中的辅助函数有哪些"><a href="#Vuex中的辅助函数有哪些" class="headerlink" title="Vuex中的辅助函数有哪些"></a>Vuex中的辅助函数有哪些</h3><ul>
+<li>mapState：拿到vuex中state中的数据</li>
+<li>mapMutations： 调用方法修改vuex中的属性，此方式修改可以实时更新vuex</li>
+<li>mapActions： 类似于计算属性，在vuex中对数据进行操作并返回</li>
+<li>mapGetters： 首先需要在vuex中定义getters，类似于计算属性，里面定义一个方法，需要返回一个值<br>，通过this.属性名调用</li>
 </ul>
 <h3 id="为什么v-if和v-for不建议用在同一标签"><a href="#为什么v-if和v-for不建议用在同一标签" class="headerlink" title="为什么v-if和v-for不建议用在同一标签"></a>为什么v-if和v-for不建议用在同一标签</h3><ul>
 <li>1、性能损耗：v-for的优先级比v-if高，每次渲染都会先循环再进行条件判断</li>
@@ -608,14 +650,55 @@
 <h3 id="什么是虚拟DOM，使用虚拟DOM的好处是"><a href="#什么是虚拟DOM，使用虚拟DOM的好处是" class="headerlink" title="什么是虚拟DOM，使用虚拟DOM的好处是?"></a>什么是虚拟DOM，使用虚拟DOM的好处是?</h3><ul>
 <li>通过js创建一个Object对象来模拟真实DOM结构，这个对象包含标签名(tag)、属性(attrs)、和子元素对象(children)三个属性，通过vue中的render()函数把虚拟DOM编译成真实DOM，再通过appendChild()添加到页面中，Vue中的虚拟DOM最大的优势就是diff算法。减少JavaScript操作真实DOM带来的性能消耗</li>
 </ul>
+<h3 id="set-方法的作用"><a href="#set-方法的作用" class="headerlink" title="$set 方法的作用"></a>$set 方法的作用</h3><ul>
+<li> 当一个引用类型的数据添加新属性时，数据添加了 页面不会响应式改变，这时候我们可以通过this.$set方法进行新属性得添加，从而达到响应式变化的效果</li>
+</ul>
+<h3 id="refs-属性的作用"><a href="#refs-属性的作用" class="headerlink" title="$refs 属性的作用"></a>$refs 属性的作用</h3><ul>
+<li>可以在组件名或标签名上添加一个ref属性，通过this.$refs.名字 可以获取对应的ref属性的组件或DOM元素</li>
+</ul>
 <h3 id="常见的Vue指令有哪些"><a href="#常见的Vue指令有哪些" class="headerlink" title="常见的Vue指令有哪些"></a>常见的Vue指令有哪些</h3><p>v-once：只会初始渲染一次数据，渲染完之后，该标签里面的数据不再进行响应式改变<br>v-html：可以解析数据中的HTML代码<br>v-text：不会解析HTMl代码，该标签内原有的内容会被替换掉<br>v-pre：不对具有v-pre属性的标签内容做解析<br>v-cloak：解决浏览器刷新时页面插值闪烁问题<br>v-bind：动态修改标签的属性<br>v-if：添加或删除元素，如果值为true 则表示添加元素 false表示删除<br>v-show：控制元素的显示与隐藏，<br>v-on：绑定事件 可以简写成@ 绑定的方法在methods中<br>v-for：列表渲染指令<br>  数据的类型：<br>  Array  数组<br>  Object 对象<br>  String 字符串<br>  Number 数字(必须是一个自然数，表示数组的长度)</p>
 <h3 id="v-model原理是什么"><a href="#v-model原理是什么" class="headerlink" title="v-model原理是什么"></a>v-model原理是什么</h3><p>通过v-bind绑定输入框的value值实现数据改变输入框内容跟着改变，再通过v-on监听输入框的input事件，在事件函数中获取输入框的value来改变数据，从而达到双向绑定的实现，v-model就是这种实现的一个语法糖</p>
 <h3 id="父传子数据"><a href="#父传子数据" class="headerlink" title="父传子数据"></a>父传子数据</h3><p>在父组件的子组件标签上自定义一个属性，属性值就是给子组件传递的数据</p>
 <p>在子组件通过props属性来接收父组件传递过来的数据</p>
 <p>在子组件内就可以使用传递的数据</p>
+<h3 id="Vue-的响应式原理是什么？"><a href="#Vue-的响应式原理是什么？" class="headerlink" title="Vue 的响应式原理是什么？"></a>Vue 的响应式原理是什么？</h3><ul>
+<li>vue.js 采用数据劫持结合发布者-订阅者模式的方式 通过 Object.defineProperty()来劫持各个数据的 setter 和 getter 数据变动时发布消息给订阅者 触发相应的监听回调来渲染视图</li>
+</ul>
 <h3 id="子传父数据"><a href="#子传父数据" class="headerlink" title="子传父数据"></a>子传父数据</h3><p>1、在子组件的事件函数中通过this.$emit()方法，向父组件发出一个自定义事件，同时携带数据<br>2、在父组件的子组件标签上通过v-on监听子组件发出的自定义事件，绑定一个事件触发函数<br>3、在父组件的事件触发函数中可以接收到一个参数，该参数就是子组件传递过来的数据</p>
 <h3 id="vue中生命周期函数有哪些"><a href="#vue中生命周期函数有哪些" class="headerlink" title="vue中生命周期函数有哪些"></a>vue中生命周期函数有哪些</h3><p>Vue生命周期分为4个大的阶段<br>初始化、挂载、更新、销毁 触发八个生命周期函数<br>beforeCreate ：  初始化前<br>  vue实例开始准备加载data/methods….<br>created : 初始化后<br>  vue已经加载完data/methods….<br>  进行网络请求，拿到页面数据<br>beforeMount ： 挂载前<br>  将vue实例挂载到某个DOM元素前<br>mounted ： 挂载后<br>   将vue实例挂载某个DOM元素完成,这时才可以对DOM进行操作<br>beforeUpdate ： 更新前<br>updated ： 更新后<br>beforeDestroy ： 销毁前<br>destroyed ： 销毁后</p>
-<h3 id="路由的导航守卫"><a href="#路由的导航守卫" class="headerlink" title="路由的导航守卫"></a>路由的导航守卫</h3><p>全局前置守卫 router.beforeEach()<br>全局后置守卫 router.afterEach()<br>全局解析守卫 router.beforeResolve()<br>路由独享守卫 beforeEnter:(to,from,next)=&gt;{}<br>beforeRouteEnter:()=&gt;{} 对访问用户进行权限校验<br>beforeRouteUpdate:()=&gt;{} 一般在动态路由的路径发生改变时，需要执行的操作<br>beforeRouterLeave:()=&gt;{} 通常情况下是为了预防用户还未保存前离开</p>
+<h3 id="路由的导航守卫"><a href="#路由的导航守卫" class="headerlink" title="路由的导航守卫"></a>路由的导航守卫</h3><ul>
+<li>全局前置守卫 router.beforeEach()</li>
+<li>全局后置守卫 router.afterEach()</li>
+<li>全局解析守卫 router.beforeResolve()</li>
+<li>路由独享守卫 beforeEnter:(to,from,next)=&gt;{}</li>
+<li>beforeRouteEnter:()=&gt;{} 对访问用户进行权限校验</li>
+<li>beforeRouteUpdate:()=&gt;{} 一般在动态路由的路径发生改变时，需要执行的操作</li>
+<li>beforeRouterLeave:()=&gt;{} 通常情况下是为了预防用户还未保存前离开</li>
+</ul>
+<h3 id="vue中computed、watch、method的区别？"><a href="#vue中computed、watch、method的区别？" class="headerlink" title="vue中computed、watch、method的区别？"></a>vue中computed、watch、method的区别？</h3><p><code>watch</code>、<code>computed</code>和<code>methods</code>都可以监听数据的变化并进行响应式处理，但它们之间还是存在明显的区别：</p>
+<ol>
+<li><code>computed</code>适用于计算属性，并且会缓存计算结果，提高性能。</li>
+<li><code>watch</code>适用于处理异步操作或复杂的逻辑，因为它可以监听数据的变化，并在数据变化后立即执行回调函数。</li>
+<li><code>methods</code>适用于处理用户交互，需要手动调用才能触发相应的操作</li>
+</ol>
+<h3 id="封装axios"><a href="#封装axios" class="headerlink" title="封装axios"></a>封装axios</h3><div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span>;</span><br><span class="line"><span class="comment">// 创建一个 Axios 实例</span></span><br><span class="line"><span class="keyword">const</span> apiClient = axios.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">baseURL</span>: <span class="string">&#x27;https://api.example.com&#x27;</span>, <span class="comment">// 替换成您的 API 地址</span></span><br><span class="line">  <span class="attr">timeout</span>: <span class="number">10000</span>, <span class="comment">// 请求超时时间（毫秒）</span></span><br><span class="line">  <span class="attr">headers</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 添加请求拦截器（可选）</span></span><br><span class="line">apiClient.<span class="property">interceptors</span>.<span class="property">request</span>.<span class="title function_">use</span>(</span><br><span class="line">  <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 在发送请求之前做些什么（例如添加认证信息）</span></span><br><span class="line">    <span class="comment">// config.headers[&#x27;Authorization&#x27;] = &#x27;Bearer &#x27; + token;</span></span><br><span class="line">    <span class="keyword">return</span> config;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(error);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"><span class="comment">// 添加响应拦截器（可选）</span></span><br><span class="line">apiClient.<span class="property">interceptors</span>.<span class="property">response</span>.<span class="title function_">use</span>(</span><br><span class="line">  <span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 对响应数据做些什么（例如解析数据）</span></span><br><span class="line">    <span class="keyword">return</span> response.<span class="property">data</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 对响应错误做些什么</span></span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(error);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> apiClient</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="封装ajax"><a href="#封装ajax" class="headerlink" title="封装ajax"></a>封装ajax</h3><div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ajax.js</span></span><br><span class="line"><span class="comment">// 封装一个 AJAX 请求函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ajax</span>(<span class="params">url, options = &#123;&#125;</span>) &#123;</span><br><span class="line">  <span class="comment">// 从 options 参数中提取请求方法、请求头和请求体，默认值为 GET 方法和空对象</span></span><br><span class="line">  <span class="keyword">const</span> &#123; method = <span class="string">&#x27;GET&#x27;</span>, headers = &#123;&#125;, body = <span class="literal">null</span> &#125; = options;</span><br><span class="line">  <span class="comment">// 使用 Fetch API 发送请求</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">fetch</span>(url, &#123;</span><br><span class="line">    method, <span class="comment">// 请求方法</span></span><br><span class="line">    <span class="attr">headers</span>: &#123;</span><br><span class="line">      ...headers,</span><br><span class="line">      <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>, <span class="comment">// 设置默认的 Content-Type 为 application/json</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">body</span>: body ? <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(body) : <span class="literal">null</span>, <span class="comment">// 将请求体转换成 JSON 字符串</span></span><br><span class="line">  &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 检查响应是否成功，否则抛出一个错误</span></span><br><span class="line">      <span class="keyword">if</span> (!response.<span class="property">ok</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;Network response was not ok&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 解析 JSON 响应数据并返回</span></span><br><span class="line">      <span class="keyword">return</span> response.<span class="title function_">json</span>();</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;Fetch Error:&#x27;</span>, error); <span class="comment">// 处理异常并打印错误信息</span></span><br><span class="line">      <span class="keyword">throw</span> error; <span class="comment">// 继续抛出错误，以便调用者可以处理它</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 导出封装的 AJAX 请求函数</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ajax;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<h3 id="判断一个对象为空"><a href="#判断一个对象为空" class="headerlink" title="判断一个对象为空"></a>判断一个对象为空</h3><ul>
+<li><code>JSON.stringify(data) === &#39;&#123;&#125;&#39;</code>它可以通过将对象转为字符串来判断是否为空</li>
+<li><code>Object.keys(data).length</code>.它是通过判断对象自身有没有key 值来判断是否为空的</li>
+<li><code>Object.values(data).length</code>通过判断对象是否有value值来判断是否为空对象的</li>
+<li>使用 <code>for...in</code> 循环</li>
+<li>如果对象为空，它们将返回 <code>true</code>，否则返回 <code>false</code>。</li>
+<li>这些方法只会检查对象本身的属性，而不会检查原型链上的属性。如果希望同时检查原型链上的属性，请使用 <code>hasOwnProperty()</code> 方法进行判断。</li>
+</ul>
+<h3 id="for-in-和-for-of-循环的区别"><a href="#for-in-和-for-of-循环的区别" class="headerlink" title="for in 和 for of 循环的区别 ?"></a>for in 和 for of 循环的区别 ?</h3><ul>
+<li><code>for in</code> 用于遍历对象的键(<code>key</code>)，<code>for in</code>会遍历所有自身的和原型链上的可枚举属性。如果是数组，<br>for in会将数组的索引(index)当做对象的key来遍历，其他的object也是一样的。</li>
+<li><code>for of</code>是<code>es6</code>引入的语法，用于遍历 所有迭代器iterator，其中包括<br><code>HTMLCollection</code>,<code>NodeList</code>,<code>Array</code>，<code>Map</code>，<code>Set</code>，<code>String</code>，<code>TypedArray</code>，<code>arguments</code>等对象的值(<code>item</code>)。</li>
+</ul>
 <h3 id="前端优化性能"><a href="#前端优化性能" class="headerlink" title="前端优化性能"></a>前端优化性能</h3><p>1、减少请求数量</p>
 <p>2、减少资源大小</p>
 <p>3、优化网络连接</p>
@@ -623,10 +706,6 @@
 <p>5、减少重绘回流</p>
 <p>6、性能更好的API</p>
 <p>7、webpack性能优化</p>
-<h3 id="new操作符具体干了什么"><a href="#new操作符具体干了什么" class="headerlink" title="new操作符具体干了什么"></a>new操作符具体干了什么</h3><p>创建一个空对象，作为新创建的实例对象</p>
-<p>将这个空对象原型，指向构造函数的原型，实现原型链继承</p>
-<p>将构造函数的this指向这个空对象，调用构造函数，给对象添加属性和方法</p>
-<p>返回这个对象，如果构造函数没有返回其他对象或函数，则默认返回这个对象。</p>
 ]]></content>
       <categories>
         <category>javascript</category>
