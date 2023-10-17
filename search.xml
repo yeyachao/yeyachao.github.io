@@ -37,7 +37,7 @@
 <h3 id="逻辑运算符-amp-amp-、-、"><a href="#逻辑运算符-amp-amp-、-、" class="headerlink" title="逻辑运算符 &amp;&amp;、||、!"></a>逻辑运算符 &amp;&amp;、||、!</h3><ul>
 <li>&amp;&amp;与：两个条件都为真，结果才是真，第一个为假，则不会继续执行，直接返回假</li>
 <li>||或：两个条件有一个为真时，结果为真，第一个为真，则不会继续执行，直接返回真，</li>
-<li>! 非：表示反取操作，将真变为假，将假变为真</li>
+<li>! 非：表示反取操作，将真变为假，将假变为真 </li>
 </ul>
 <h3 id="js数据类型转换"><a href="#js数据类型转换" class="headerlink" title="js数据类型转换"></a>js数据类型转换</h3><ul>
 <li><p>隐式数据类型转换：</p>
@@ -151,7 +151,8 @@
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">func.<span class="title function_">bind</span>(thisArg, arg1, arg2, ...)</span><br></pre></td></tr></table></figure></div>
 
 <p>bind：<code>bind</code> 方法创建一个新的函数，当被调用时将其 <code>this</code> 关键字设置为提供的值</p>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul>
+<p><strong>总结</strong>：</p>
+<ul>
 <li>三者都用于改变函数执行上下文（<code>this</code> 指向）。</li>
 <li><code>call</code> 和 <code>apply</code> 会立即调用函数，而 <code>bind</code> 会返回一个新的函数。</li>
 <li><code>call</code> 和 <code>apply</code> 的区别在于传参方式，<code>call</code> 是接收一系列参数列表，而 <code>apply</code> 是接收一个参数数组。</li>
