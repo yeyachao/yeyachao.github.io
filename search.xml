@@ -3,7 +3,7 @@
   <entry>
     <title>Hello World（摘抄意林）</title>
     <url>/2024/10/11/my/</url>
-    <content><![CDATA[<p>看完《强风吹拂》这部动漫，不禁想到了经典动漫《起风了》里面的台词：</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>看完《强风吹拂》这部动漫，不禁想到了经典动漫《起风了》里面的台词：</p>
 <p><strong>“纵有疾风起，人生不言弃”</strong></p>
 <p>《强风吹拂》向我们传达的也是一种突破自我的坚持</p>
 <p>箱根驿传一路崎岖坎坷，这何尝不是人生之路的真实写照呢？</p>
@@ -15,9 +15,33 @@
 ]]></content>
   </entry>
   <entry>
+    <title>cad笔记</title>
+    <url>/2024/11/19/cad%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
+    <div id="aplayer-MShInciB" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="3986040" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"
+    ></div>
+
+
+<p>JavaScript，ES6知识点总结</p>
+<h5 id="1、线条指令"><a href="#1、线条指令" class="headerlink" title="1、线条指令"></a>1、线条指令</h5><p>L直线指令 PL多段线指令，ML多线指令，SPL样条曲线，(以上指令共同功能:输入C关闭，可以闭合线段头尾，形成闭合区)</p>
+<h5 id="2、正交模式"><a href="#2、正交模式" class="headerlink" title="2、正交模式"></a>2、正交模式</h5><p>F8正交模式(按住shift键为临时开关)限制光标的编辑方向为水平/垂直的轴向</p>
+<h5 id="3、极轴追踪"><a href="#3、极轴追踪" class="headerlink" title="3、极轴追踪"></a>3、极轴追踪</h5><p>F10极轴追踪，从上一个点/基点延伸出虚线，与光标进行对齐和追踪操作虚线方向可以进行设置(SE)</p>
+<h5 id="4、增量角"><a href="#4、增量角" class="headerlink" title="4、增量角"></a>4、增量角</h5><p>增量角:为每根虚线之间的夹角</p>
+<p>附加角:单独设置的角度线条(极轴角度)</p>
+<h5 id="5、角度替代"><a href="#5、角度替代" class="headerlink" title="5、角度替代"></a>5、角度替代</h5><p>角度替代在指令中定点定位需要一个角度方向时，输入〈角度值进行编辑方向限制<br>角度符号;’’小于号,逗号键大写，注意关闭中文输入法，否则为书名号《</p>
+]]></content>
+      <categories>
+        <category>cad</category>
+      </categories>
+      <tags>
+        <tag>cad</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>面试题总结</title>
     <url>/2023/06/26/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p>JavaScript，ES6知识点总结</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>JavaScript，ES6知识点总结</p>
 <h1 id="JavaScript-amp-amp-ES6"><a href="#JavaScript-amp-amp-ES6" class="headerlink" title="JavaScript&amp;&amp;ES6"></a>JavaScript&amp;&amp;ES6</h1><h3 id="js的数据类型及其存储方式"><a href="#js的数据类型及其存储方式" class="headerlink" title="js的数据类型及其存储方式"></a>js的数据类型及其存储方式</h3><ul>
 <li><p><strong>基本数据类型</strong>：Number，String，Boolean，Null，Undefined，Symbol</p>
 </li>
@@ -1083,7 +1107,7 @@
   <entry>
     <title>ES6(未总结完)</title>
     <url>/2023/06/02/ES6/</url>
-    <content><![CDATA[<p><strong>ES6声明变量的六种方法</strong></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><strong>ES6声明变量的六种方法</strong></p>
 <p>var，function，let，const，import，class</p>
 <p><strong>let,var,const 区别</strong></p>
 <p>var：预解析 变量提升 只提升变量名 不提升赋值，产生作用域</p>
@@ -1196,7 +1220,7 @@
   <entry>
     <title>回流与重绘</title>
     <url>/2022/11/15/ReflowandRepaint/</url>
-    <content><![CDATA[<hr>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><hr>
 <p><strong>在回流和重绘之前先来了解一下的浏览器的渲染过程</strong></p>
 <ol>
 <li><strong>解析HTML文件</strong>，构建DOM树（Document Object Model），表示页面的结构和内容。</li>
