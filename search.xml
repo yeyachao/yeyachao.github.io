@@ -18,10 +18,14 @@
     <title>cad笔记</title>
     <url>/2024/11/19/cad%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
-    <div id="aplayer-WrwCZyzK" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-rFKgadQN" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="3986040" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"
     ></div>
 
+<!-- 
+    <div id="aplayer-LxlHjbEc" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="627070825" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"
+    ></div> -->
 
 <p>JavaScript，ES6知识点总结</p>
 <h5 id="1、线条指令"><a href="#1、线条指令" class="headerlink" title="1、线条指令"></a>1、线条指令</h5><p>L直线指令 PL多段线指令，ML多线指令，SPL样条曲线，(以上指令共同功能:输入C关闭，可以闭合线段头尾，形成闭合区)</p>
